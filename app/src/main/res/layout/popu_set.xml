@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent">
+<TextView
+    android:textSize="20sp"
+    android:id="@+id/set_tv1"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="55dp" />
+    <TextView
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/set_tv2"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+</LinearLayout>

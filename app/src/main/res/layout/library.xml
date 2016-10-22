@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lib"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="#00BFFF"
+        android:gravity="center"
+        android:text="图书查询"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/nei"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/title"
+        android:orientation="horizontal">
+
+        <EditText
+
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+
+            android:background="@drawable/tv_style"
+            android:gravity="center"
+            android:hint="请输入查询的图书" />
+
+        <Button
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:background="@drawable/tv_style1"
+            android:text="查询"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ProgressBar
+
+        android:id="@+id/pro"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/nei"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/pagecode"
+        android:layout_below="@+id/pro" />
+
+    <LinearLayout
+        android:id="@+id/pagecode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/Previous"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="上一页" />
+
+        <TextView
+            android:id="@+id/page"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="下一页" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,9 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
- <TextView
-     android:id="@+id/txetview"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/cj">
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:text="←"
+            android:textColor="#FFFAFA"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="成绩查询    "
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/li"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/query"
+        android:layout_alignStart="@+id/query"
+        android:layout_marginBottom="81dp">
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:gravity="center"
+                android:text="学期"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:gravity="center"
+                android:text="@string/classaa"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:gravity="center"
+                android:text="@string/classname"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="2016-2017-1"
+                android:textSize="15sp" />
+
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="---请选择---"
+                android:textSize="15sp" />
+
+            <EditText
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:id="@+id/classet"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/tv_style3"
+                android:gravity="center"
+                android:hint="请输入课程名称" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/query"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:background="@drawable/tv_style4"
+        android:text="查询"
+        android:textSize="20sp"
+        android:layout_above="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="Design By TY"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="10dp"
+        android:id="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

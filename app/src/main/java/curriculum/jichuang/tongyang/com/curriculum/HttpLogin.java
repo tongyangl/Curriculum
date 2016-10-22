@@ -40,6 +40,7 @@ import static java.lang.Double.isNaN;
 /**
  * Created by tongyang on 2016/9/14.
  */
+
 public class HttpLogin {
 
     private int Code;

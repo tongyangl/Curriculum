@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 
 import android.view.Window;
@@ -27,12 +28,13 @@ public class MenuActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE); // 设置Activity标题不显示
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+      //  this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.menu);
         gv = (GridView) findViewById(R.id.gv);
         int []iv={
-                R.drawable.grade,
+
                 R.drawable.c,
+                R.drawable.grade,
                 R.drawable.person,
                 R.drawable.news,
                 R.drawable.book,
@@ -43,12 +45,10 @@ public class MenuActivity extends Activity {
 
         };
         String [] tv={
-                "成绩查询","课程表","个人信息","新闻","图书查询","挂科了？","等级考试","评课","待开发"
+                "课程表","成绩查询","个人信息","新闻","图书查询","挂科了？","等级考试","评课","待开发"
 
         };
         ArrayList<HashMap<String,Object>>list=new ArrayList<>();
-
-
            for (int i=0;i<9;i++){
                HashMap<String,Object>map=new HashMap<>();
                map.put("iv",iv[i]);
@@ -68,12 +68,30 @@ public class MenuActivity extends Activity {
 
                 }else if (code==2){
 
+                    Intent intent=new Intent();
+                    intent.setClass(MenuActivity.this,GradeActivity.class);
+                    startActivity(intent);
 
+                }else if (code==3){
 
+                    Intent intent=new Intent();
+                   // intent.setClass(MenuActivity.this,testactivity.class);
+                    startActivity(intent);
                 }
             }
         });
 
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent home = new Intent(Intent.ACTION_MAIN);
+            home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            home.addCategory(Intent.CATEGORY_HOME);
+            startActivity(home);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
