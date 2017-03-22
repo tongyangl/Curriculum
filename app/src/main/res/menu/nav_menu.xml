@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <group>
+        <item
+            android:icon="@drawable/ic_class"
+            android:id="@+id/kecheng"
+            android:checkable="true"
+            android:title="课表信息">
+
+        </item>
+        <item
+            android:icon="@drawable/ic_book"
+            android:id="@+id/library"
+            android:checkable="true"
+            android:title="图书查询"
+
+            >
+
+        </item>
+        <item
+            android:icon="@drawable/ic_grade"
+            android:id="@+id/gradesearch"
+            android:checkable="true"
+            android:title="成绩查询">
+
+        </item>
+
+
+
+    </group>
+    <item
+
+        android:title="设置">
+        <menu>
+
+            <item
+                android:icon="@drawable/ic_setting"
+                android:id="@+id/setting"
+                android:checkable="true"
+
+                android:title="设置">
+
+            </item>
+
+
+        </menu>
+
+
+    </item>
+
+
+</menu>
