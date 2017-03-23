@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         IntentFilter intentFilter = new IntentFilter("getkb");
         registerReceiver(receiver, intentFilter);
+        IntentFilter intentFilter1 = new IntentFilter("resetkb");
+        registerReceiver(receiver, intentFilter1);
     }
 
     @Override
@@ -101,7 +103,13 @@ public class MainActivity extends AppCompatActivity {
         receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                setkb("1");
+                 if (intent.getAction().equals("getkb")){
+                     setkb("1");
+                 }else if (intent.getAction().equals("resetkb")){
+                     SharedPreferences sharedPreferences=getSharedPreferences("zc",MODE_PRIVATE);
+                     title_zc.setText(sharedPreferences.getString("zc","1"));
+                     setkb(sharedPreferences.getString("zc","1"));
+                 }
             }
         };
 

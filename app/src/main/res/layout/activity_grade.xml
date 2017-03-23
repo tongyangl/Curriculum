@@ -1,10 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#F0F0F0"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context=".UI.UI.UI.GradeActivity">
 
             <android.support.v7.widget.Toolbar
                 android:background="@color/colorPrimary"
@@ -15,7 +16,6 @@
 
             </android.support.v7.widget.Toolbar>
 
-
         <ListView
             android:descendantFocusability="blocksDescendants"
             android:layout_marginLeft="5dp"
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:divider="@null"
-            android:dividerHeight="5dp">
+            android:dividerHeight="10dp">
         </ListView>
 
 
