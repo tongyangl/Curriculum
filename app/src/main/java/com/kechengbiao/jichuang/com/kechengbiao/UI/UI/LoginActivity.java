@@ -12,8 +12,10 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -47,12 +49,24 @@ public class LoginActivity extends AppCompatActivity {
     private Button login;
     private ProgressDialog progressDialog;
     private TextView data;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 
+
         setContentView(R.layout.activity_login);
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("导入课表");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         number= (EditText) findViewById(R.id.number);
         password= (EditText) findViewById(R.id.passname);
         data= (TextView) findViewById(R.id.choose_data);
@@ -93,7 +107,11 @@ public class LoginActivity extends AppCompatActivity {
                 builder.show();
             }
         });
-        number.addTextChangedListener(new TextWatcher() {
+        if (data.getText().toString().contains("点击")) {
+            login.setClickable(false);
+            login.setBackgroundResource(R.drawable.button_login2);
+        }
+        data.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -106,14 +124,50 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (number.getText().length()==0||password.getText().length()==0){
+                if (data.getText().toString().contains("点击")){
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
-
                 }else {
-                    login.setClickable(true);
-                    login.setBackgroundResource(R.drawable.button_login);
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
+
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
                 }
+            }
+        });
+            number.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (data.getText().toString().contains("点击")){
+                    login.setClickable(false);
+                    login.setBackgroundResource(R.drawable.button_login2);
+                }else {
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
+
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
+                }
+
             }
         });
 
@@ -130,24 +184,22 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (number.getText().length()==0||password.getText().length()==0){
+                if (data.getText().toString().contains("点击")){
+
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
-
                 }else {
-                    login.setClickable(true);
-                    login.setBackgroundResource(R.drawable.button_login);
-                }
-            }
-        });
-        if (number.getText().length()==0||password.getText().length()==0){
-            login.setClickable(false);
-            login.setBackgroundResource(R.drawable.button_login2);
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
 
-        }else {
-            login.setClickable(true);
-            login.setBackgroundResource(R.drawable.button_login);
-        }
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
+                }}
+        });
 
 
         login.setOnClickListener(new View.OnClickListener() {

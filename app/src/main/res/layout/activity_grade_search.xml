@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:gravity="center"
-            android:hint="点击选择学期" />
+            android:text="点击选择学期" />
     </LinearLayout>
 
     <android.support.design.widget.TextInputLayout

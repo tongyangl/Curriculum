@@ -85,7 +85,15 @@ public class Util extends Activity {
         }
     }
 
-
+    public static boolean isNumeric(String str){
+        for (int i = 0; i < str.length(); i++){
+            System.out.println(str.charAt(i));
+            if (!Character.isDigit(str.charAt(i))){
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;

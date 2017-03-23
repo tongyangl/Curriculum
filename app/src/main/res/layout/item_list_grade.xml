@@ -5,17 +5,16 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:clickable="true"
+    android:clickable="false"
     android:foreground="?android:attr/selectableItemBackground">
 
     <LinearLayout
         android:background="#E5E5E5"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
-            android:background="#EDEDED"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
@@ -24,7 +23,7 @@
                 android:id="@+id/classname"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:gravity="center"
                 android:textSize="14sp" />
 
@@ -47,7 +46,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
 
@@ -59,7 +58,7 @@
                 android:gravity="center" />
         </RelativeLayout>
 
-        <RelativeLayout
+      <!--  <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
@@ -79,7 +78,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="50dp"
                 android:gravity="center" />
-        </RelativeLayout>
+        </RelativeLayout>-->
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

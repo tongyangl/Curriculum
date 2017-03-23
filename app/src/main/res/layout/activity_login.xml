@@ -9,6 +9,7 @@
     tools:context="com.kechengbiao.jichuang.com.kechengbiao.UI.UI.LoginActivity">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
@@ -35,7 +36,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:gravity="center"
-            android:hint="点击选择学期" />
+            android:text="点击选择学期" />
     </LinearLayout>
 
     <android.support.design.widget.TextInputLayout

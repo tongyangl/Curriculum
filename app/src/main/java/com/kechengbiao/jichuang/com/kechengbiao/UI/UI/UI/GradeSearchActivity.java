@@ -50,7 +50,9 @@ public class GradeSearchActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_grade_search);
         toolbar= (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("成绩查询");
         setSupportActionBar(toolbar);
+
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,13 +113,19 @@ public class GradeSearchActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (number.getText().length() == 0 || password.getText().length() == 0) {
+                if (data.getText().toString().contains("点击")){
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
+                }else {
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
 
-                } else {
-                    login.setClickable(true);
-                    login.setBackgroundResource(R.drawable.button_login);
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
                 }
             }
         });
@@ -135,24 +143,57 @@ public class GradeSearchActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (number.getText().length() == 0 || password.getText().length() == 0) {
+                if (data.getText().toString().contains("点击")){
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
+                }else {
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
 
-                } else {
-                    login.setClickable(true);
-                    login.setBackgroundResource(R.drawable.button_login);
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
                 }
             }
         });
-        if (number.getText().length() == 0 || password.getText().length() == 0) {
+
+        if (data.getText().toString().contains("点击")) {
             login.setClickable(false);
             login.setBackgroundResource(R.drawable.button_login2);
-
-        } else {
-            login.setClickable(true);
-            login.setBackgroundResource(R.drawable.button_login);
         }
+        data.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (data.getText().toString().contains("点击")){
+                    login.setClickable(false);
+                    login.setBackgroundResource(R.drawable.button_login2);
+                }else {
+                    if (number.getText().length()==0||password.getText().length()==0){
+                        login.setClickable(false);
+                        login.setBackgroundResource(R.drawable.button_login2);
+
+                    }else {
+                        login.setClickable(true);
+                        login.setBackgroundResource(R.drawable.button_login);
+
+                    }
+                }
+            }
+        });
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,6 +207,7 @@ public class GradeSearchActivity extends AppCompatActivity {
                         pass
                 };
                 if (wifi | internet) {
+
                     SharedPreferences preferences1 = getSharedPreferences("userinfo", MODE_PRIVATE);
                     SharedPreferences.Editor editor1 = preferences1.edit();
                     editor1.putString("username", num);

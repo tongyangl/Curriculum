@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffff"
 
     android:orientation="vertical"
@@ -18,8 +19,6 @@
     </View>
     <ScrollView
         android:background="#ffff"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -38,6 +37,8 @@
           <android.support.v7.widget.CardView
               android:foreground="?android:attr/selectableItemBackground"
               android:clickable="true"
+              app:cardCornerRadius="0dp"
+              app:cardElevation="0dp"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
@@ -63,8 +64,8 @@
                       android:layout_width="wrap_content"
                       android:layout_height="30dp" />
                   <View
-                      android:layout_marginRight="5dp"
-                      android:layout_marginLeft="5dp"
+                      android:layout_marginRight="10dp"
+                      android:layout_marginLeft="10dp"
                       android:background="#BEBEBE"
                       android:layout_width="match_parent"
                       android:layout_height="1px">
@@ -76,6 +77,8 @@
             <android.support.v7.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -101,8 +104,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp" />
                     <View
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
                         android:background="#BEBEBE"
                         android:layout_width="match_parent"
                         android:layout_height="1px">
@@ -111,7 +114,241 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="教务网"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:text="清空教务系统用户名及密码"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <View
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#BEBEBE"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px">
 
+                    </View>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="vertical"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="课表设置"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:text="仅显示本周要上的课程"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="安全"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="信息加密"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:text="你所填写的所有用户信息都储存在本地，并使用base-64进行加密，但由于校园系统大多采用明文传输，请确保网络环境安全"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="关于"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <android.support.v7.widget.CardView
+                android:id="@+id/gotogit"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:text="项目地址(点击前往)"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:textColor="#000"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_vertical"
+                    android:text="https://github.com/tongyangl/Curriculum.git"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" />
+                <View
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#BEBEBE"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px">
+
+                </View>
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="开源许可（点击查看）"
+
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:text="Apache License,Version2.0"
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp" />
+                    <View
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#BEBEBE"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px">
+
+                    </View>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/about"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="关于本软件"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp" />
+                    <TextView
+
+                        android:text="软件版本1.0.1"
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
