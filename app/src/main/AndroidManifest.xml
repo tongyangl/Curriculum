@@ -13,16 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name=".UI.UI.UI.MainActivity" android:theme="@style/TranslucentTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".UI.UI.LoginActivity"  android:theme="@style/TranslucentTheme">
 
         </activity>
         <activity android:name=".UI.UI.UI.BookDetalActivity" android:theme="@style/TranslucentTheme">
+
+        </activity>
+        <activity android:name=".UI.UI.UI.loadActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity

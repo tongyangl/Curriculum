@@ -6,10 +6,11 @@
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:clickable="false"
+
     android:foreground="?android:attr/selectableItemBackground">
 
     <LinearLayout
-        android:background="#E5E5E5"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
