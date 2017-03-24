@@ -27,6 +27,7 @@ public class loadActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                //无初始化数据
                 Intent intent = new Intent(loadActivity.this, MainActivity.class);
                 startActivity(intent);
             }
