@@ -3,15 +3,17 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffff"
-
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:layout_height="match_parent">
- <android.support.v7.widget.Toolbar
-     android:id="@+id/toolbar"
-     android:layout_width="match_parent"
-     android:layout_height="?attr/actionBarSize">
 
- </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+    </android.support.v7.widget.Toolbar>
+
     <View
         android:background="@drawable/shape_shadow"
         android:layout_width="match_parent"

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2b21b5b61e282302f14147259cc4ab8a41058b32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_581f7e328ddc102e39cc22cc62eed31f6f6b2886\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.0_bf227b0c1edaa4333a099f75b7d52304c15c42b1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\佟杨\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_5baf90f7cb30425355830d7e9b53cf0598e97b7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.0_3dd398c5fc1239f5d6ea5b30189618b3d4af8fda\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.github.nicolasjafelle\paginglistview\1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="813900fb2a98c32193da6f120642e407f56af59b">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.nicolasjafelle-paginglistview-1.2_6ab4b03d289e524fddedda583d6fa924a78e7b7b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_657365d1328f1638b5f2275fea6e8e344f5d8c3a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\cn.carbswang.android\NumberPickerView\1.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="237b2ebb3629bfdb0b874b6f023e552b41fa159b">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.carbswang.android-NumberPickerView-1.1.1_761be220b55114829f6e67f19c0969a9782d5ec0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_2c68b9a55934307649f306a3892932a0f44b29ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_123b8d62f0f68d90a4703de4b8727ed0392de914\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\佟杨\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.5.0\bb7d4d96e780e8ef4f275c7d8dd3ef2883ddf99a\okio-1.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb7d4d96e780e8ef4f275c7d8dd3ef2883ddf99a">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.5.0_d9607031db67532dbfb3fcf77f22c7f674826619\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.zzhoujay.markdown\markdown\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d53a5b5202729ab28ae7554d387f0f48b91a3c94">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.zzhoujay.markdown-markdown-1.0.0_30f4d5c712d589143fad929a7e3f71c2ec67a5f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_9fbeac25234fca5a8faa5566508135f134bbc84a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.zzhoujay.richtext\richtext\2.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4f4cea42c2584f63f8843098771935d136b29701">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.zzhoujay.richtext-richtext-2.2.0_430945a19cc0f6127a543b7b131e1f822555e870\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_deaf0b2e542aa2f809817eeb52e4c528f69831d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_5b5f9975fd9d0623779be46ecc855e7274c0bc0e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\libs\jsoup-1.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.8.1_0f0a143bf0f5051a0ba17a7b2df5be011eacd661\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_84a9fe08d6e281acd07174630971cc343fc89d9a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ca429c93489736af0b14dddbc566ec7b51ee24c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\androidsdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_389a4996d39543a2b5168cc6f96eb6f88e392b69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e159ce0b6ce047a6ed7451afbad19c2b6ba11701">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_63d5e172911b215c393854546dba865cc76c2d84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_600a9c24fe51708ac0b95667fa947e3a672572b7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_c7ec41142659387f8289dbb67e5f4c729cebffe2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2ccfe4cbf43ae1fbf047133072610b6021c6f2c">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e3dd6691c638349a78bc6e6b8ff094750e6e677a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\佟杨\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.4.0_b3f31dcb071b167cf161b47c377ed0491d77c8c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_cdcb7d16e5a2c3cae28b742ec8b9867d7837ba91\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_0c35dbb7fb54000585503d3785fcdd88940de862\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\kechengbiao\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Android\kechengbiao\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_e663f4c124fe0fa501cff96e96b2d7c12a43053f\classes.dex" />
+    </item>
+
+</items>

@@ -2,11 +2,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 实心 -->
-    <solid android:color="#76EE00"/>
+    <solid android:color="#66CC99"/>
 
     <!-- 圆角 -->
     <corners android:radius="5dp"
-        android:color="#76EE00"
+        android:color="#66CC99"
         />
     <!-- 边距 -->
     <padding

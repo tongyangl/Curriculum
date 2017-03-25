@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="markdown-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.zzhoujay.markdown/markdown/1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.zzhoujay.markdown/markdown/1.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zzhoujay.markdown/markdown/1.0.0/25cb1301fb494be683b02f4ea6ca31a046df0af9/markdown-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
