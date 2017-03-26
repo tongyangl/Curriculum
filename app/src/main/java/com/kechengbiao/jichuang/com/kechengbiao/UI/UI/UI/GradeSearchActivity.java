@@ -85,6 +85,7 @@ public class GradeSearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(GradeSearchActivity.this);
+                builder.setTitle("学期选择");
                 LayoutInflater inflater = getLayoutInflater();
                 View view = inflater.inflate(R.layout.layout_choosezc, null);
                 final NumberPickerView pickerView = (NumberPickerView) view.findViewById(R.id.picker);

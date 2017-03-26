@@ -2,9 +2,12 @@ package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -102,8 +105,27 @@ public class LibraryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dialog = new ProgressDialog(LibraryActivity.this);
                 LayoutInflater inflater = getLayoutInflater();
-                QueryAsyncTask asyncTask = new QueryAsyncTask(LibraryActivity.this, listView, dialog, inflater, getApplicationContext());
-                asyncTask.execute(search_text.getText().toString().trim());
+                ConnectivityManager con = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
+                boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
+                boolean internet = con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
+                 if (wifi|internet){
+                     QueryAsyncTask asyncTask = new QueryAsyncTask(LibraryActivity.this, listView, dialog, inflater, getApplicationContext());
+                     asyncTask.execute(search_text.getText().toString().trim());
+                 }else {
+
+                     AlertDialog.Builder builder = new AlertDialog.Builder(LibraryActivity.this);
+                     builder.setTitle("提示");
+                     builder.setMessage("系统检测到无网络连接!");
+                     builder.setCancelable(false);
+                     builder.setPositiveButton("知道了！", new DialogInterface.OnClickListener() {
+                         @Override
+                         public void onClick(DialogInterface dialog, int which) {
+                             dialog.cancel();
+                         }
+                     });
+                     builder.create().show();
+                 }
+
             }
         });
     }
