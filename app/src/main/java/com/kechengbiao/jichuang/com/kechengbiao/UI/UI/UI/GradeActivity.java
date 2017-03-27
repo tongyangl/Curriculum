@@ -80,7 +80,7 @@ public class GradeActivity extends AppCompatActivity {
         Elements elements = document.select("div[class=Nsb_pw]");
         String a = elements.get(2).ownText();
         String b = elements.get(2).select("span").text();
-        Log.d("===", a + b);
+
         toolbar.setTitle(a.trim().substring(5, a.length()));
         toolbar.setSubtitle(b.trim());
         if (document.getElementById("dataList").select("tr").get(1).text().equals("未查询到数据")) {
@@ -106,6 +106,7 @@ public class GradeActivity extends AppCompatActivity {
             inflater = getLayoutInflater();
             GradeListAdatper adatper = new GradeListAdatper(list, inflater);
             listView.setAdapter(adatper);
+
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -113,7 +114,7 @@ public class GradeActivity extends AppCompatActivity {
                     AlertDialog.Builder builder = new AlertDialog.Builder(GradeActivity.this);
                     builder.setTitle("成绩详情");
                     builder.setMessage("学科：" + list.get(position).get("name") + "\n" + "成绩:" + list.get(position).get("grade") + "\n"
-                            + "课程编号：" + list.get(position).get("number") + "\n" + "学时" + list.get(position).get("time") + "课程性质：" + list.get(position).get("Nature") + "\n"
+                            + "课程编号：" + list.get(position).get("number") + "\n" + "学时:" + list.get(position).get("time") +"\n"+ "课程性质：" + list.get(position).get("Nature") + "\n"
                             + "学分：" + list.get(position).get("credit") + "\n" + "考查方式：" + list.get(position).get("mode") + "\n" + "课程属性：" + list.get(position).get("attribute")
 
                     );

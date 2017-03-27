@@ -1,6 +1,7 @@
 package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class BookDetalActivity extends AppCompatActivity {
     private TextView textView;
     private android.support.v7.widget.Toolbar toolbar;
     private WebView webView;
+    private ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,8 @@ public class BookDetalActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.tv);
         Intent intent = getIntent();
         String url = "http://219.149.214.106:8087/opac/" + intent.getStringExtra("url");
-        BookDetalAsyncTask asyncTask = new BookDetalAsyncTask(webView,textView);
+        dialog=new ProgressDialog(this);
+        BookDetalAsyncTask asyncTask = new BookDetalAsyncTask(webView,textView,dialog);
         asyncTask.execute(url);
 
 

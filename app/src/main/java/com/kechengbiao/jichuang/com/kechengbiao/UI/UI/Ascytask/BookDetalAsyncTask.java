@@ -1,5 +1,6 @@
 package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.text.Html;
 import android.util.Log;
@@ -28,16 +29,17 @@ import java.net.URL;
 public class BookDetalAsyncTask extends AsyncTask<String, Void, Document> {
     private TextView textView;
    private WebView webView;
-
-    public BookDetalAsyncTask(WebView webView, TextView textView) {
+  private ProgressDialog dialog;
+    public BookDetalAsyncTask(WebView webView, TextView textView,ProgressDialog dialog) {
         this.webView = webView;
         this.textView = textView;
+        this.dialog=dialog;
     }
 
     @Override
     protected void onPostExecute(Document document) {
         super.onPostExecute(document);
-
+        dialog.dismiss();
         loadview(document.select("div[id=item_detail]").toString());
 
     }
@@ -59,6 +61,7 @@ public class BookDetalAsyncTask extends AsyncTask<String, Void, Document> {
     protected void onPreExecute() {
         super.onPreExecute();
 
+        dialog.show();
     }
 
     @Override

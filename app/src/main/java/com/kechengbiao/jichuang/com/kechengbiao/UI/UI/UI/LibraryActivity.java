@@ -53,12 +53,7 @@ public class LibraryActivity extends AppCompatActivity {
         search_text = (EditText) findViewById(R.id.search_text);
         dialog = new ProgressDialog(LibraryActivity.this);
         listView.setHasMoreItems(true);
-        listView.setPagingableListener(new PagingListView.Pagingable() {
-            @Override
-            public void onLoadMoreItems() {
-                
-            }
-        });
+
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

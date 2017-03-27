@@ -35,7 +35,6 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 /**
  * Created by 佟杨 on 2017/3/16.
  */
-
 public class GradeSearchActivity extends AppCompatActivity {
     private TextInputLayout textInputLayout_number;
     private TextInputLayout textInputLayout_password;
@@ -60,7 +59,6 @@ public class GradeSearchActivity extends AppCompatActivity {
         toolbar= (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("成绩查询");
         setSupportActionBar(toolbar);
-
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,8 +207,8 @@ public class GradeSearchActivity extends AppCompatActivity {
                 ConnectivityManager con = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
                 boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
                 boolean internet = con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
-                String pass = password.getText().toString();
-                String num = number.getText().toString();
+                String pass = password.getText().toString().trim();
+                String num = number.getText().toString().trim();
                 String mes[] = {
                         num,
                         pass
@@ -252,22 +250,18 @@ public class GradeSearchActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             progressDialog = new ProgressDialog(GradeSearchActivity.this);
-            progressDialog.setMessage("导入中,请稍候...");
-            progressDialog.setTitle("亲爱的");
+            progressDialog.setTitle("登陆教务系统中...");
             progressDialog.setCancelable(true);
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.show();
             super.onPreExecute();
         }
-
         @Override
         protected void onCancelled() {
             progressDialog.dismiss();
             super.onCancelled();
         }
-
         @Override
-
         protected Integer doInBackground(String... params) {
             String num = params[0];
             String pass = params[1];
@@ -276,7 +270,6 @@ public class GradeSearchActivity extends AppCompatActivity {
             String cookieStore = httpLogin.login(num, pass);
             getLibtary libtary = new getLibtary();
             String person = libtary.get(cookieStore);
-
             if (httpLogin.getCode() == 302) {
                 SharedPreferences mySharedPreferences = getSharedPreferences("CookieString",
                         Activity.MODE_PRIVATE);
@@ -295,7 +288,6 @@ public class GradeSearchActivity extends AppCompatActivity {
 
                 return httpLogin.getCode();
             }
-
 
             return null;
         }

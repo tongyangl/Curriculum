@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class Util extends Activity {
     public static String URL_LIBRARY_SEARCH="http://219.149.214.106:8087/opac/openlink.php?strSearchType=title&match_flag=forward&historyCount=1&strText=";
-    public static String URL_LIBRARY_SEARCH1="&doctype=ALL&with_ebook=on&displaypg=100&showmode=list&sort=CATA_DATE&orderby=desc&dept=ALL";
+    public static String URL_LIBRARY_SEARCH1="&doctype=ALL&with_ebook=on&displaypg=20&showmode=list&sort=CATA_DATE&orderby=desc&dept=ALL";
     public String getZc(String str) {
         if (str.contains("(双周)")){
             String zc="";

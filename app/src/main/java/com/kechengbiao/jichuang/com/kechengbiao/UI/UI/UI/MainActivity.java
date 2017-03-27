@@ -684,7 +684,7 @@ public class MainActivity extends AppCompatActivity {
             params.setMargins(1, 1, 1, 1);
             tv.setLayoutParams(params);
             // tv.setGravity(Gravity.CENTER);
-            tv.setText(Class + classroom + teacher + classroom);
+            tv.setText(Class + classroom + teacher );
             tv.setClickable(true);
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override

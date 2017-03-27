@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.webkit.CookieManager;
 
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ProtocolException;
@@ -62,6 +63,7 @@ public class HttpLogin {
 
     public String login(String username, String password) {
 
+        //  String url = "http://cdjwc.ccu.edu.cn/jsxsd/xk/LoginToXk";
         String url = "http://cdjwc.ccu.edu.cn/jsxsd/xk/LoginToXk";
         // 根据url获得HttpPost对象
         HttpPost httpRequest = new HttpPost(url);
@@ -88,6 +90,8 @@ public class HttpLogin {
         String encoded;
         String Accout;
         String passwd;
+        Log.d("xxxx", username);
+        Log.d("xxxx", password);
         Accout = encodeInp(username);
         passwd = encodeInp(password);
         encoded = Accout + "%%%" + passwd;
@@ -101,6 +105,9 @@ public class HttpLogin {
             HttpResponse httpResponse = httpclient.execute(httpRequest);
 
             // 判断是否请求成功
+            //MDQxNDQwNzMw%%%c3N5MTk5MzA0MTA=
+            // MDQxNDQwNzMw%%%c3N5MTk5MzA0MT==
+
 
             int code = httpResponse.getStatusLine().getStatusCode();
             Log.d("aaa", code + "");
@@ -138,42 +145,49 @@ public class HttpLogin {
     }
 
 
-
-    private static String encodeInp(String input) {
-        String keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-        String output = "";
-        int chr1, chr2, chr3;
-        int enc1, enc2, enc3, enc4;
-        int i = 0;
-        chr1 = chr2 = chr3 = enc1 = enc2 = enc3 = enc4 = 0;
-        do {
-
-            chr1 = input.codePointAt(i++);
-            enc1 = chr1 >> 2;
-            if (i < input.length()) {
-                chr2 = input.codePointAt(i++);
-                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-                if (i < input.length()) {
-                    chr3 = input.codePointAt(i++);
-                    enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-                    enc4 = chr3 & 63;
-                } else {
-                    enc3 = enc4 = 64;
-                }
-            } else {
-                enc2 = (chr1 & 3) << 4;
-                enc3 = enc4 = 64;
+    public static  String encodeInp(String s){
+        String key = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+        byte[] bytes=s.getBytes();
+        char[] keys=key.toCharArray();
+        StringBuilder out= new StringBuilder("");
+        byte b1,b2,b3;
+        int c1,c2,c3,c4;
+        int i=0;
+        do{
+            b1=bytes[i++];
+            if(i==s.length()){
+                c1=b1 >> 2;
+                c2=(b1&3)<<4;
+                c3=c4=64;
+                out.append(keys[c1]);
+                out.append(keys[c2]);
+                out.append(keys[c3]);
+                out.append(keys[c4]);
+                break;
             }
-
-
-            output = output + keyStr.charAt(enc1) + keyStr.charAt(enc2) + keyStr.charAt(enc3) + keyStr.charAt(enc4);
-            chr1 = chr2 = chr3 = enc1 = enc2 = enc3 = enc4 = 0;
-
-
-        } while (i < input.length());
-        Log.d("qweqwe", output);
-        return output;
-
+            b2=bytes[i++];
+            if(i==s.length()){
+                c1=b1 >> 2;
+                c2=((b1&3)<<4)| b2>>4;
+                c3=(b2&15)<<2;
+                c4=64;
+                out.append(keys[c1]);
+                out.append(keys[c2]);
+                out.append(keys[c3]);
+                out.append(keys[c4]);
+                break;
+            }
+            b3=bytes[i++];
+            c1=b1 >> 2;
+            c2=((b1&3)<<4)| b2>>4;
+            c3=((b2&15)<<2)|b3>>6;
+            c4=b3&63;
+            out.append(keys[c1]);
+            out.append(keys[c2]);
+            out.append(keys[c3]);
+            out.append(keys[c4]);
+        }while (i<s.length());
+        return out.toString();
     }
 
 }

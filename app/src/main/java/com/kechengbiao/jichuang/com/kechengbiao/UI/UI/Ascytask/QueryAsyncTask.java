@@ -42,17 +42,18 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
     private LibraryListAdapter adapter;
     private LayoutInflater inflater;
     private MyLisetView listView;
-    private  Activity activity;
-    public QueryAsyncTask( Activity activity,MyLisetView listView, ProgressDialog dialog, LayoutInflater inflater, Context context) {
+    private Activity activity;
+
+    public QueryAsyncTask(Activity activity, MyLisetView listView, ProgressDialog dialog, LayoutInflater inflater, Context context) {
         this.dialog = dialog;
         this.inflater = inflater;
         this.context = context;
         this.listView = listView;
-        this.activity=activity;
+        this.activity = activity;
     }
 
     @Override
-    protected void onPostExecute(Document s) {
+    protected void onPostExecute(final Document s) {
         super.onPostExecute(s);
         util = new Util();
         Object o = s.getElementById("search_book_list");
@@ -73,6 +74,8 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
             dialog.dismiss();
 
             if (iscontet()) {
+
+
                 list = new ArrayList<Map<String, String>>();
                 Elements ol = s.getElementById("search_book_list").select("li");
                 Log.d("tytyty", ol.size() + "");
@@ -118,9 +121,36 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
 
                 }
             }
-            adapter = new LibraryListAdapter(list,activity, inflater);
+            adapter = new LibraryListAdapter(list, activity, inflater);
             listView.setAdapter(adapter);
 
+
+            if (s.getElementsByClass("num_prev").hasText()) {
+
+                listView.setPagingableListener(new PagingListView.Pagingable() {
+                    @Override
+                    public void onLoadMoreItems() {
+                        String page = s.getElementsByClass("num_prev").select("b").text();
+                        String[] args = page.split("/");
+                        Log.d("tttt","sss");
+                        int a = Integer.parseInt(args[0]);
+                        int b = Integer.parseInt(args[1]);
+                        Log.d("tttt",a+""+b);
+                        if (b > a & a == 1) {
+                            String nexturl = s.getElementsByClass("num_prev").select("a").attr("href");
+                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, listView);
+                            loadMoreLibrary.execute(nexturl);
+
+                        } else if (a > 1 & a < b) {
+                            String nexturl = s.getElementsByClass("num_prev").select("a").get(1).attr("href");
+                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, listView);
+                            loadMoreLibrary.execute(nexturl);
+                        }
+                    }
+                });
+            } else {
+                listView.onFinishLoading(false, null);
+            }
         }
     }
 
@@ -149,6 +179,7 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
         }
         return null;
     }
+
     public boolean iscontet() {
         ConnectivityManager con = (ConnectivityManager) context.getSystemService(Activity.CONNECTIVITY_SERVICE);
         boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();

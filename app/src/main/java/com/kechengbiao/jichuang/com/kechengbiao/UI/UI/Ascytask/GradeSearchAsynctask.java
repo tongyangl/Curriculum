@@ -33,6 +33,7 @@ public class GradeSearchAsynctask extends AsyncTask<String,Void,String> {
     protected void onPreExecute() {
         super.onPreExecute();
         dialog.setTitle("正在查询成绩");
+        dialog.show();
     }
 
     @Override
