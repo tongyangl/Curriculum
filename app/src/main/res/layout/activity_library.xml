@@ -55,8 +55,15 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
+ <android.support.v7.widget.RecyclerView
+     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+     android:id="@+id/Recycle"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
+
+ </android.support.v7.widget.RecyclerView>
+   <!-- <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
@@ -72,7 +79,7 @@
             android:dividerHeight="5dp">
 
         </com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView>
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>-->
 
 
     <android.support.design.widget.FloatingActionButton

@@ -8,11 +8,20 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.support.v4.os.AsyncTaskCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.kechengbiao.jichuang.com.kechengbiao.R;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.EndLessOnscrollListener;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.LibraryActivity;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.GradeRecyclerAdapter;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.LibraryListAdapter;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
 import com.paging.listview.PagingListView;
@@ -39,17 +48,21 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
     private Context context;
     private Util util;
     private List<Map<String, String>> list;
-    private LibraryListAdapter adapter;
+    //private LibraryListAdapter adapter;
+    private GradeRecyclerAdapter adapter;
     private LayoutInflater inflater;
     private MyLisetView listView;
     private Activity activity;
-
-    public QueryAsyncTask(Activity activity, MyLisetView listView, ProgressDialog dialog, LayoutInflater inflater, Context context) {
+   private RecyclerView recyclerView;
+    private LinearLayoutManager manager;
+    public QueryAsyncTask(Activity activity, RecyclerView RecyclerView, ProgressDialog dialog,
+                          LayoutInflater inflater, Context context,LinearLayoutManager manager) {
         this.dialog = dialog;
         this.inflater = inflater;
         this.context = context;
-        this.listView = listView;
+        this.recyclerView = RecyclerView;
         this.activity = activity;
+        this.manager=manager;
     }
 
     @Override
@@ -121,36 +134,35 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
 
                 }
             }
-            adapter = new LibraryListAdapter(list, activity, inflater);
-            listView.setAdapter(adapter);
-
-
-            if (s.getElementsByClass("num_prev").hasText()) {
-
-                listView.setPagingableListener(new PagingListView.Pagingable() {
-                    @Override
-                    public void onLoadMoreItems() {
+            adapter = new GradeRecyclerAdapter(list, activity);
+            recyclerView.setAdapter(adapter);
+            recyclerView.addOnScrollListener(new EndLessOnscrollListener(manager) {
+                @Override
+                public void onLoadMore(int currentPage) {
+                    if (s.getElementsByClass("num_prev").hasText()) {
                         String page = s.getElementsByClass("num_prev").select("b").text();
                         String[] args = page.split("/");
-                        Log.d("tttt","sss");
-                        int a = Integer.parseInt(args[0]);
-                        int b = Integer.parseInt(args[1]);
-                        Log.d("tttt",a+""+b);
+                        Log.d("tttt",page);
+                        int a = Integer.parseInt(args[0].trim());
+                        int b = Integer.parseInt(args[1].trim());
                         if (b > a & a == 1) {
                             String nexturl = s.getElementsByClass("num_prev").select("a").attr("href");
-                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, listView);
+                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, recyclerView,manager,adapter,context);
                             loadMoreLibrary.execute(nexturl);
 
                         } else if (a > 1 & a < b) {
                             String nexturl = s.getElementsByClass("num_prev").select("a").get(1).attr("href");
-                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, listView);
+                            LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, recyclerView,manager,adapter,context);
                             loadMoreLibrary.execute(nexturl);
+                        }else {
+                            Toast.makeText(context,"已经加载全部数据 ",Toast.LENGTH_SHORT).show();
+
                         }
+
                     }
-                });
-            } else {
-                listView.onFinishLoading(false, null);
-            }
+                }
+            });
+
         }
     }
 
@@ -190,5 +202,7 @@ public class QueryAsyncTask extends AsyncTask<String, Integer, Document> {
             return false;
         }
     }
+
+
 }
 

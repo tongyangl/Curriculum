@@ -10,7 +10,7 @@ import com.paging.listview.PagingListView;
  * Created by 佟杨 on 2017/3/15.
  */
 
-public class MyLisetView extends PagingListView {
+public class MyLisetView extends ListView {
     public MyLisetView(Context context) {
         super(context);
     }

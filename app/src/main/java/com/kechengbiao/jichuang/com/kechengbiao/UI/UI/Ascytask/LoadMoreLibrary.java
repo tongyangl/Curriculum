@@ -1,11 +1,17 @@
 package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.EndLessOnscrollListener;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.GradeRecyclerAdapter;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
 import com.paging.listview.PagingListView;
 
@@ -18,7 +24,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -29,19 +37,23 @@ import java.util.Map;
 public class LoadMoreLibrary extends AsyncTask<String, Void, Document> {
     private List<Map<String, String>> list;
     private List<Map<String, String>> list1;
-    private MyLisetView lisetView;
+    private RecyclerView lisetView;
+    private LinearLayoutManager manager;
+    private GradeRecyclerAdapter adapter;
+    private Context context;
 
-    public LoadMoreLibrary(List<Map<String, String>> list1, MyLisetView lisetView) {
-        this.list1 = list1;
+    public LoadMoreLibrary(List<Map<String, String>> list, RecyclerView lisetView, LinearLayoutManager manager,
+                           GradeRecyclerAdapter adapter, Context context) {
+        this.list = list;
         this.lisetView = lisetView;
+        this.manager = manager;
+        this.adapter = adapter;
+        this.context = context;
     }
 
     @Override
     protected void onPostExecute(final Document s) {
         super.onPostExecute(s);
-        Util util = new Util();
-
-        list = new ArrayList<Map<String, String>>();
         Elements ol = s.getElementById("search_book_list").select("li");
         Log.d("tytyty", ol.size() + "");
         for (int i = 0; i < ol.size(); i++) {
@@ -85,37 +97,45 @@ public class LoadMoreLibrary extends AsyncTask<String, Void, Document> {
             list.add(map);
 
         }
-        list1.addAll(list);
-        if (s.getElementsByClass("num_prev").hasText()) {
+        adapter.notifyDataSetChanged();
+        LinkedHashSet set=new LinkedHashSet(list);
+        list.clear();
+        list.addAll(set);
+       /* HashSet hashSet=new HashSet(list);
+        list.clear();
+        list.addAll(hashSet);*/
 
 
-            lisetView.setPagingableListener(new PagingListView.Pagingable() {
-                @Override
-                public void onLoadMoreItems() {
+        lisetView.addOnScrollListener(new EndLessOnscrollListener(manager) {
+            @Override
+            public void onLoadMore(int currentPage) {
+                Log.d("ffff",currentPage+"");
+
+                if (s.getElementsByClass("num_prev").hasText()) {
                     String page = s.getElementsByClass("num_prev").select("b").text();
                     String[] args = page.split("/");
-                    int a = Integer.parseInt(args[0]);
-                    int b = Integer.parseInt(args[1]);
-                    if (b > a & a == 1) {
+                    int a = Integer.parseInt(args[0].trim());
+                    int b = Integer.parseInt(args[1].trim());
+                    Log.d("ffff", a+"");
+                    Log.d("ffff", b+"");
+                    if (b > a && a == 1) {
                         String nexturl = s.getElementsByClass("num_prev").select("a").attr("href");
-                        LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, lisetView);
+                        LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, lisetView, manager, adapter, context);
                         loadMoreLibrary.execute(nexturl);
-                        lisetView.onFinishLoading(true,list1);
-                    } else if (a > 1 & a < b) {
-                        String nexturl = s.getElementsByClass("num_prev").select("a").get(1).attr("href");
-                        LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, lisetView);
-                        loadMoreLibrary.execute(nexturl);
-                        lisetView.onFinishLoading(true,list1);
-                    }else {
-                        lisetView.onFinishLoading(false, null);
-                    }
-                }
-            });
-        } else {
-            lisetView.onFinishLoading(false, null);
-        }
-    }
 
+                    } else if (a > 1 && a < b) {
+                        String nexturl = s.getElementsByClass("num_prev").select("a").get(1).attr("href");
+                        LoadMoreLibrary loadMoreLibrary = new LoadMoreLibrary(list, lisetView, manager, adapter, context);
+                        loadMoreLibrary.execute(nexturl);
+                        Log.d("gggg", nexturl);
+                    } else if (a==b){
+                        Toast.makeText(context, "已经加载全部数据 ", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }
+        });
+    }
 
 
     @Override
