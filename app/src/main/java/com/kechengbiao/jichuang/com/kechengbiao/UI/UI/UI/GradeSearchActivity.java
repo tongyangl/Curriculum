@@ -1,4 +1,4 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,9 +26,7 @@ import android.widget.Toast;
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask.GradeSearchAsynctask;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.HttpLogin;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.KB;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.getLibtary;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.LoginActivity;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 

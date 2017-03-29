@@ -1,8 +1,7 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
@@ -10,7 +9,6 @@ import android.view.WindowManager;
 import android.os.Handler;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.LoginActivity;
 
 /**
  * Created by 佟杨 on 2017/3/24.

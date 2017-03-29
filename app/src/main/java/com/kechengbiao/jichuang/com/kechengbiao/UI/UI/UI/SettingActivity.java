@@ -1,7 +1,8 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,9 +13,11 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -22,20 +25,22 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
@@ -52,7 +57,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private TextView zcc;
     private CardView update;
     private TextView vercode;
-   private DownLoadComplete complete;
+    private DownLoadComplete complete;
+    private ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,16 +98,16 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
         vercode.setText(getVerName() + " ");
         zcc.setText(sharedPreferences.getString("zc", "1"));
-      complete  =new DownLoadComplete();
-        IntentFilter intentFilter=new IntentFilter();
+        complete = new DownLoadComplete();
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
-        registerReceiver(complete,intentFilter);
+        registerReceiver(complete, intentFilter);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-     unregisterReceiver(complete);
+        unregisterReceiver(complete);
     }
 
     public String getVerName() {
@@ -170,60 +177,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 builder1.show();
                 break;
             case R.id.update:
-                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-                builder2.setTitle("提示");
-                builder2.setMessage("检测到新版本，是否立即下载？");
-                builder2.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ConnectivityManager con = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
-                        boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
-                        boolean internet = con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
-                        if (internet) {
 
-                            AlertDialog.Builder builder2 = new AlertDialog.Builder(SettingActivity.this);
-                            builder2.setTitle("警告");
-                            builder2.setMessage("您正在使用手机流量，是否继续？");
-                            builder2.setPositiveButton("继续", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://7xstld.com1.z0.glb.clouddn.com/kechengbiao.apk"));
-                                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
-                                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-                                    request.setTitle("下载");
-                                    request.setDescription("正在下载课程表");
-                                    request.setAllowedOverRoaming(false);
-                                    request.setDestinationInExternalFilesDir(SettingActivity.this, Environment.DIRECTORY_DOWNLOADS, "kechengbiao");
-                                    DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                                    long id = downloadManager.enqueue(request);
-
-                                }
-                            });
-                            builder2.setNegativeButton("取消", null);
-                            builder2.setNeutralButton("打开WiFi", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                }
-                            });
-
-                            builder2.show();
-                        }else {
-                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://7xstld.com1.z0.glb.clouddn.com/kechengbiao.apk"));
-                            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
-                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-                            request.setTitle("下载");
-                            request.setDescription("正在下载课程表");
-                            request.setAllowedOverRoaming(false);
-                            request.setDestinationInExternalFilesDir(SettingActivity.this, Environment.DIRECTORY_DOWNLOADS, "kechengbiao");
-                             Log.d("sss",Environment.DIRECTORY_DOWNLOADS);
-                            DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                            long id = downloadManager.enqueue(request);
-                        }
-                    }
-                });
-                builder2.setNegativeButton("取消", null);
-                builder2.show();
+                getServiceCode getServiceCode = new getServiceCode();
+                getServiceCode.execute();
                 break;
         }
     }
@@ -266,17 +222,19 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         builder.setNegativeButton("取消", null);
         builder.show();
     }
-    private class  DownLoadComplete extends BroadcastReceiver{
+
+    private class DownLoadComplete extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)){
+            if (intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE)) {
                 long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
-                Toast.makeText(SettingActivity.this, "编号："+id+"的下载任务已经完成！", Toast.LENGTH_SHORT).show();
-                installApk(SettingActivity.this,id);
+                Toast.makeText(SettingActivity.this, "编号：" + id + "的下载任务已经完成！", Toast.LENGTH_SHORT).show();
+                installApk(SettingActivity.this, id);
             }
         }
-        private  void installApk(Context context, long downloadApkId) {
+
+        private void installApk(Context context, long downloadApkId) {
             DownloadManager dManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
             Intent install = new Intent(Intent.ACTION_VIEW);
             Uri downloadFileUri = dManager.getUriForDownloadedFile(downloadApkId);
@@ -288,6 +246,123 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             } else {
                 Log.e("DownloadManager", "download error");
             }
+        }
+    }
+
+    class getServiceCode extends AsyncTask<Void, Void, String> {
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if (s == null) {
+                dialog.dismiss();
+                AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+                builder.setTitle("提示!");
+                builder.setMessage("与服务器连接失败！请稍候重试");
+                builder.setPositiveButton("确定", null);
+                builder.show();
+            } else {
+                dialog.dismiss();
+                try {
+                    JSONObject object = new JSONObject(s);
+                    String vercode = object.getString("vercode");
+                    String vername = object.getString("vername");
+                    String update = object.getString("update");
+                    if (Double.parseDouble(vercode) > getVerCode()) {
+                        AlertDialog.Builder builder2 = new AlertDialog.Builder(SettingActivity.this);
+                        builder2.setTitle("检测到新版本");
+                        builder2.setMessage("更新内容：" + update + "\n\n" + "更新版本号:" + vername + "当前版本号" + getVerName()+"\n"+"是否继续下载");
+                        builder2.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ConnectivityManager con = (ConnectivityManager) getSystemService(Activity.CONNECTIVITY_SERVICE);
+                                boolean wifi = con.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting();
+                                boolean internet = con.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting();
+                                if (internet) {
+
+                                    AlertDialog.Builder builder2 = new AlertDialog.Builder(SettingActivity.this);
+                                    builder2.setTitle("警告");
+                                    builder2.setMessage("您正在使用手机流量，是否继续？");
+                                    builder2.setPositiveButton("继续", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://7xstld.com1.z0.glb.clouddn.com/kechengbiao.apk"));
+                                            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
+                                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+                                            request.setTitle("下载");
+                                            request.setDescription("正在下载课程表");
+                                            request.setAllowedOverRoaming(false);
+                                            request.setDestinationInExternalFilesDir(SettingActivity.this, Environment.DIRECTORY_DOWNLOADS, "kechengbiao");
+                                            DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                                            long id = downloadManager.enqueue(request);
+
+                                        }
+                                    });
+                                    builder2.setNegativeButton("取消", null);
+                                    builder2.setNeutralButton("打开WiFi", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                                            startActivity(intent);
+                                        }
+                                    });
+
+                                    builder2.show();
+                                } else {
+                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://7xstld.com1.z0.glb.clouddn.com/kechengbiao.apk"));
+                                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
+                                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+                                    request.setTitle("下载");
+                                    request.setDescription("正在下载课程表");
+                                    request.setAllowedOverRoaming(false);
+                                    request.setDestinationInExternalFilesDir(SettingActivity.this, Environment.DIRECTORY_DOWNLOADS, "kechengbiao");
+                                    Log.d("sss", Environment.DIRECTORY_DOWNLOADS);
+                                    DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                                    long id = downloadManager.enqueue(request);
+                                }
+                            }
+                        });
+                        builder2.setNegativeButton("取消", null);
+                        builder2.show();
+
+                    } else {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+                        builder.setTitle("哼！");
+                        builder.setMessage("当前已是最新版本啦！");
+                        builder.setPositiveButton("确定", null);
+                        builder.show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(SettingActivity.this);
+            dialog.setTitle("连接服务器中");
+            dialog.setCancelable(true);
+            dialog.show();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            HttpClient client = new DefaultHttpClient();
+            HttpGet get = new HttpGet("https://raw.githubusercontent.com/tongyangl/MyApi/master/kechengbiao/kb.json");
+            try {
+                HttpResponse response = client.execute(get);
+
+                String a = EntityUtils.toString(response.getEntity());
+                return a;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
     }
 }

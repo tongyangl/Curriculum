@@ -9,8 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.BookDetalActivity;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui.BookDetalActivity;
 
 import java.util.ArrayList;
 import java.util.List;

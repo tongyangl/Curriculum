@@ -1,4 +1,4 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -20,13 +20,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask.QueryAsyncTask;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.EndLessOnscrollListener;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
-import com.paging.listview.PagingListView;
 
 /**
  * Created by 佟杨 on 2017/3/14.

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.GetGrade;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.GradeActivity;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui.GradeActivity;
 
 /**
  * Created by 佟杨 on 2017/3/16.

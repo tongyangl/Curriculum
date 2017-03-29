@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.BookDetalActivity;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui.BookDetalActivity;
 
 import java.util.List;
 import java.util.Map;

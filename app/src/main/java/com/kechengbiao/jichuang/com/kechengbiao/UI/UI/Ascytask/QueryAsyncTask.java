@@ -6,25 +6,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
-import android.support.v4.os.AsyncTaskCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.AbsListView;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.EndLessOnscrollListener;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.LibraryActivity;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.GradeRecyclerAdapter;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.LibraryListAdapter;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
-import com.paging.listview.PagingListView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

@@ -2,7 +2,6 @@ package com.kechengbiao.jichuang.com.kechengbiao.UI.UI;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +15,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -29,7 +27,6 @@ import android.widget.Toast;
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.HttpLogin;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.KB;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI.MainActivity;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.getLibtary;
 
 import org.json.JSONArray;

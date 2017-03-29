@@ -1,22 +1,18 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask.BookDetalAsyncTask;
-import com.zzhoujay.richtext.RichText;
 
 /**
  * Created by 佟杨 on 2017/3/15.

@@ -1,7 +1,5 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,7 +8,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,17 +40,8 @@ import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
@@ -693,6 +682,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+            tv.setGravity(Gravity.CENTER_HORIZONTAL);
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -732,5 +722,14 @@ public class MainActivity extends AppCompatActivity {
         layout7.removeAllViews();
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+       if (keyCode==KeyEvent.KEYCODE_BACK){
+           moveTaskToBack(false);
+           return  true;
 
+       }
+        return super.onKeyDown(keyCode, event);
+
+    }
 }

@@ -1,11 +1,8 @@
-package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.UI;
+package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,8 +17,6 @@ import android.widget.Toast;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.adapter.GradeListAdatper;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
-import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.TyListView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

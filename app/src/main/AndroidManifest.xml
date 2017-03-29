@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kechengbiao.jichuang.com.kechengbiao">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
     <application
-        android:hardwareAccelerated="true"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".UI.UI.UI.MainActivity" android:theme="@style/TranslucentTheme">
+        <activity
+            android:name=".UI.UI.ui.MainActivity"
+            android:theme="@style/TranslucentTheme">
 
         </activity>
-        <activity android:name=".UI.UI.LoginActivity"  android:theme="@style/TranslucentTheme">
+        <activity
+            android:name=".UI.UI.LoginActivity"
+            android:theme="@style/TranslucentTheme">
 
         </activity>
-        <activity android:name=".UI.UI.UI.BookDetalActivity" android:theme="@style/TranslucentTheme">
+        <activity
+            android:name=".UI.UI.ui.BookDetalActivity"
+            android:theme="@style/TranslucentTheme">
 
         </activity>
-        <activity android:name=".UI.UI.UI.loadActivity">
+        <activity android:name=".UI.UI.ui.loadActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,26 +37,43 @@
             </intent-filter>
 
         </activity>
+
+
+
         <activity
 
-            android:name=".UI.UI.UI.LibraryActivity" android:theme="@style/TranslucentTheme">
+            android:name=".UI.UI.ui.LibraryActivity"
+            android:theme="@style/TranslucentTheme">
 
 
         </activity>
-        <activity android:name=".UI.UI.UI.GradeActivity" android:theme="@style/TranslucentTheme">
+        <activity
+            android:name=".UI.UI.ui.GradeActivity"
+            android:theme="@style/TranslucentTheme">
 
         </activity>
-        <activity android:name=".UI.UI.UI.GradeSearchActivity" android:theme="@style/TranslucentTheme">
+        <activity
+            android:name=".UI.UI.ui.GradeSearchActivity"
+            android:theme="@style/TranslucentTheme">
 
         </activity>
-        <activity android:name=".UI.UI.UI.SettingActivity" android:theme="@style/TranslucentTheme"></activity>
-        <!-- <receiver android:name=".UI.UI.UI.MainActivity">
-         <intent-filter android:priority="1000">
-             <action android:name="getkb" />
-         </intent-filter>
-         >
+        <activity
+            android:name=".UI.UI.ui.SettingActivity"
+            android:theme="@style/TranslucentTheme">
 
-     </receiver>-->
+        </activity>
+
+        <receiver android:name=".UI.UI.DeskTopWiget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE">
+                </action>
+            </intent-filter>
+            <meta-data
+                android:name="appwidget_provider_info.xml"
+                android:resource="@layout/appwidget">
+            </meta-data>
+        </receiver>
+
     </application>
 
 </manifest>
