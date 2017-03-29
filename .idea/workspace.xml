@@ -10,40 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ce3eb9-92cf-4a27-aca5-aab3a420cc46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/DeskTopWiget.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/appwidget.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/appwidget_provider_info.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid128636.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/replay_pid128636.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/Ascytask/GradeSearchAsynctask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/Ascytask/GradeSearchAsynctask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/Ascytask/QueryAsyncTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/Ascytask/QueryAsyncTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/BookDetalActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/BookDetalActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/GradeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/GradeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/GradeSearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/GradeSearchActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/LibraryActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/LibraryActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/SettingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/SettingActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/loadActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/UI/loadActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/adapter/GradeRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/adapter/GradeRecyclerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/adapter/LibraryListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kechengbiao/jichuang/com/kechengbiao/UI/UI/adapter/LibraryListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_grade.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_grade.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="Curriculum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2448,7 +2415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490772946574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="利用github产生json api 校验服务器版本号">
+      <created>1490793215131</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1490793215131</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2502,7 +2476,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加版本更新功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加版本更新功能" />
+    <MESSAGE value="利用github产生json api 校验服务器版本号" />
+    <option name="LAST_COMMIT_MESSAGE" value="利用github产生json api 校验服务器版本号" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2684,6 +2659,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2400#2401#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2724,6 +2703,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2400#2401#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
