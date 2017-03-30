@@ -104,13 +104,13 @@ public class MainActivity extends AppCompatActivity {
         receiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                 if (intent.getAction().equals("getkb")){
-                     setkb("1");
-                 }else if (intent.getAction().equals("resetkb")){
-                     SharedPreferences sharedPreferences=getSharedPreferences("zc",MODE_PRIVATE);
-                     title_zc.setText(sharedPreferences.getString("zc","1"));
-                     setkb(sharedPreferences.getString("zc","1"));
-                 }
+                if (intent.getAction().equals("getkb")) {
+                    setkb("1");
+                } else if (intent.getAction().equals("resetkb")) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
+                    title_zc.setText(sharedPreferences.getString("zc", "1"));
+                    setkb(sharedPreferences.getString("zc", "1"));
+                }
             }
         };
 
@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
         int i = a % 7;
 
         if (jsonObject.has("zero")) {
-            textView = CreatTV("", "", "", "", a);
+            textView = CreatTV("", "", "", "", a, 0);
             settextview(i, textView);
 
         } else {
@@ -434,14 +434,14 @@ public class MainActivity extends AppCompatActivity {
                 String allweek = "." + week + "." + week1 + ".";
                 if (allweek.trim().contains("." + zc + ".")) {
                     if (("." + week + ".").trim().contains("." + zc + ".")) {
-                        textView = CreatTV(w, teacher, classroom, Class.split("---------------------")[0], a);
+                        textView = CreatTV(w, teacher, classroom, Class.split("---------------------")[0], a, 1);
                         settextview(i, textView);
                     } else if (("." + week1 + ".").trim().contains("." + zc + ".")) {
-                        textView = CreatTV(w1, teacher1, classroom1, Class.split("---------------------")[1], a);
+                        textView = CreatTV(w1, teacher1, classroom1, Class.split("---------------------")[1], a, 1);
                         settextview(i, textView);
                     }
                 } else {
-                    textView = CreatTV("", "", "", "", a);
+                    textView = CreatTV("", "", "",  Class.split("---------------------")[0]+"/"+Class.split("---------------------")[1], a, 2);
                     settextview(i, textView);
                 }
             } else {
@@ -452,10 +452,10 @@ public class MainActivity extends AppCompatActivity {
                 String w = jsonObject.getString("w");
                 Log.d("---", Class + "asd");
                 if ((week).trim().contains("." + zc + ".")) {
-                    textView = CreatTV(w, teacher, classroom, Class, a);
+                    textView = CreatTV(w, teacher, classroom, Class, a, 1);
                     settextview(i, textView);
                 } else {
-                    textView = CreatTV("", "", "", "", a);
+                    textView = CreatTV(w, teacher, classroom, Class, a, 2);
                     settextview(i, textView);
                 }
 
@@ -501,14 +501,51 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private TextView CreatTV(final String week, final String teacher, final String classroom, final String Class, int a) {
+    private TextView CreatTV(final String week, final String teacher, final String classroom, final String Class, int a, int isweek) {
         TextView tv = new TextView(MainActivity.this);
         int height = Util.dip2px(getApplicationContext(), 100);
-        if (Class.equals("")) {
+        if (isweek == 0) {
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
             params.setMargins(1, 1, 1, 1);
             tv.setLayoutParams(params);
             tv.setClickable(false);
+
+        } else if (isweek == 2) {
+            SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+            int i = sharedPreferences.getInt("kbview", 0);
+            if (i == 0) {
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
+                params.setMargins(1, 1, 1, 1);
+                tv.setLayoutParams(params);
+                tv.setClickable(false);
+            } else {
+
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
+                params.setMargins(1, 1, 1, 1);
+                tv.setLayoutParams(params);
+                // tv.setGravity(Gravity.CENTER);
+                tv.setText(Class + classroom + teacher);
+                tv.setClickable(true);
+                tv.setBackgroundResource(R.drawable.shape_class7);
+                tv.setGravity(Gravity.CENTER_HORIZONTAL);
+                tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("课程信息");
+                        builder.setMessage("名称:" + Class + "\n" + "教室:" + classroom + "\n" + "教师:" + teacher + "\n" + "周次:" + week);
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.show();
+                    }
+                });
+                tv.setTextSize(10);
+                tv.setTextColor(Color.WHITE);
+            }
 
         } else {
             int s = (int) a / 7;
@@ -673,15 +710,9 @@ public class MainActivity extends AppCompatActivity {
             params.setMargins(1, 1, 1, 1);
             tv.setLayoutParams(params);
             // tv.setGravity(Gravity.CENTER);
-            tv.setText(Class + classroom + teacher );
+            tv.setText(Class + classroom + teacher);
             tv.setClickable(true);
-            tv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
 
-                }
-            });
             tv.setGravity(Gravity.CENTER_HORIZONTAL);
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -724,11 +755,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-       if (keyCode==KeyEvent.KEYCODE_BACK){
-           moveTaskToBack(false);
-           return  true;
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(false);
+            return true;
 
-       }
+        }
         return super.onKeyDown(keyCode, event);
 
     }

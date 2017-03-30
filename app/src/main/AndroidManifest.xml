@@ -63,16 +63,7 @@
 
         </activity>
 
-        <receiver android:name=".UI.UI.DeskTopWiget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE">
-                </action>
-            </intent-filter>
-            <meta-data
-                android:name="appwidget_provider_info.xml"
-                android:resource="@layout/appwidget">
-            </meta-data>
-        </receiver>
+
 
     </application>
 
