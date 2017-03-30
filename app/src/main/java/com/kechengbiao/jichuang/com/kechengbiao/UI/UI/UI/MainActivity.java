@@ -106,9 +106,10 @@ public class MainActivity extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
                 if (intent.getAction().equals("getkb")) {
                     setkb("1");
+                    title_zc.setText("第1周");
                 } else if (intent.getAction().equals("resetkb")) {
                     SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
-                    title_zc.setText(sharedPreferences.getString("zc", "1"));
+                    title_zc.setText("第"+sharedPreferences.getString("zc", "1")+"周");
                     setkb(sharedPreferences.getString("zc", "1"));
                 }
             }
@@ -200,13 +201,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         int mo = calendar.get(Calendar.MONTH) + 1;
         int zc = calendar.get(Calendar.WEEK_OF_YEAR);
-        SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        if (sharedPreferences.getInt("nowzc", 0) != zc) {
-            editor.putString("zc", String.valueOf(Integer.parseInt(sharedPreferences.getString("zc", "1")) + 1));
-        }
-        editor.putInt("nowzc", zc);
-        editor.commit();
+
         month.setText(mo + "\n月");
         SharedPreferences sharedPreferences1 = getSharedPreferences("zc", MODE_PRIVATE);
         realzc = sharedPreferences1.getString("zc", "1");

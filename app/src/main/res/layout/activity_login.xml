@@ -16,7 +16,11 @@
 
 
     </android.support.v7.widget.Toolbar>
-
+    <View
+        android:background="@drawable/shape_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp">
+    </View>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

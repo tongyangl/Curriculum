@@ -8,13 +8,17 @@
     tools:context=".UI.UI.ui.GradeActivity">
 
             <android.support.v7.widget.Toolbar
-                android:background="@color/colorPrimary"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="?attr/actionBarSize"
                >
 
             </android.support.v7.widget.Toolbar>
+    <View
+        android:background="@drawable/shape_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp">
+    </View>
 
         <ListView
             android:descendantFocusability="blocksDescendants"

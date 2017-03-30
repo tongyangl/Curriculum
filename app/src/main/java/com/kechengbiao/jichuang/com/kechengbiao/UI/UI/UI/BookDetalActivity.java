@@ -26,19 +26,12 @@ public class BookDetalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //透明状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            // Translucent status bar
-            window.setFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-
         setContentView(R.layout.activity_bookdetal);
         webView= (WebView) findViewById(R.id.webView);
         toolbar= (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("图书详情");
         setSupportActionBar(toolbar);
+
         toolbar.setTitle("图书详情");
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -47,7 +40,6 @@ public class BookDetalActivity extends AppCompatActivity {
                 finish();
             }
         });
-        textView = (TextView) findViewById(R.id.tv);
         Intent intent = getIntent();
         String url = "http://219.149.214.106:8087/opac/" + intent.getStringExtra("url");
         dialog=new ProgressDialog(this);

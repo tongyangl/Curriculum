@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:minHeight="50dp"
+
             android:background="@drawable/search_header"
             app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed|snap"
             app:collapsedTitleTextAppearance="@style/AppTheme"
@@ -25,7 +26,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_margin="8dp"
                 app:layout_collapseMode="pin">
 
@@ -38,6 +39,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"

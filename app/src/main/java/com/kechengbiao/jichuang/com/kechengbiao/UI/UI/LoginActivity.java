@@ -99,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 pickerView.setMaxValue(11);
                 pickerView.setMinValue(1);
                 pickerView.setValue(5);
+                builder.setTitle("选择学期");
                 builder.setView(view);
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override

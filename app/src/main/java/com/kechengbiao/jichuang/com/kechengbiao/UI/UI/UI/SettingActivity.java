@@ -59,6 +59,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private TextView vercode;
     private DownLoadComplete complete;
     private ProgressDialog dialog;
+    private CardView kbview;
+    private TextView kbview_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_setting);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("设置");
+        kbview = (CardView) findViewById(R.id.kbview);
+        kbview_tv = (TextView) findViewById(R.id.kbview_tv);
         update = (CardView) findViewById(R.id.update);
         vercode = (TextView) findViewById(R.id.vercode);
         about = (CardView) findViewById(R.id.about);
@@ -90,6 +94,14 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
             }
         });
+        SharedPreferences sharedPreferences1=getSharedPreferences("set",MODE_PRIVATE);
+        if (sharedPreferences1.getInt("kbview",0)==0){
+            kbview_tv.setText("仅显示本周要上的课程");
+
+        }else {
+            kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
+        }
+        kbview.setOnClickListener(this);
         about.setOnClickListener(this);
         git.setOnClickListener(this);
         update.setOnClickListener(this);
@@ -181,6 +193,37 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 getServiceCode getServiceCode = new getServiceCode();
                 getServiceCode.execute();
                 break;
+            case  R.id.kbview:
+                final String items[]={
+                  "仅显示本周课程","显示所有课程"
+                };
+                AlertDialog dialog = new AlertDialog.Builder(this).setTitle("单选对话框")
+                        .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences sharedPreferences=getSharedPreferences("set",MODE_PRIVATE);
+                                SharedPreferences.Editor editor=sharedPreferences.edit();
+
+                                if (which==0){
+                                    editor.putInt("kbview",which);
+                                    kbview_tv.setText("仅显示本周要上的课程");
+                                }else {
+                                    editor.putInt("kbview",1);
+                                    kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
+                                }
+                                editor.commit();
+                                Log.d("kkkk",which+"");
+                                Intent intent1=new Intent();
+                                intent1.setAction("resetkb");
+                                sendBroadcast(intent1);
+
+                                Toast.makeText(SettingActivity.this, items[which], Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        }).create();
+                dialog.show();
+
         }
     }
 
@@ -270,7 +313,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                     if (Double.parseDouble(vercode) > getVerCode()) {
                         AlertDialog.Builder builder2 = new AlertDialog.Builder(SettingActivity.this);
                         builder2.setTitle("检测到新版本");
-                        builder2.setMessage("更新内容：" + update + "\n\n" + "更新版本号:" + vername + "当前版本号" + getVerName()+"\n"+"是否继续下载");
+                        builder2.setMessage("更新内容：" + update + "\n\n" + "更新版本号:" + vername + "当前版本号" + getVerName() + "\n" + "是否继续下载");
                         builder2.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

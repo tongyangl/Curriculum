@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".UI.UI.LoginActivity"
-            android:theme="@style/TranslucentTheme">
+           >
 
         </activity>
         <activity
@@ -43,18 +43,18 @@
         <activity
 
             android:name=".UI.UI.ui.LibraryActivity"
-            android:theme="@style/TranslucentTheme">
+            >
 
 
         </activity>
         <activity
             android:name=".UI.UI.ui.GradeActivity"
-            android:theme="@style/TranslucentTheme">
+           >
 
         </activity>
         <activity
             android:name=".UI.UI.ui.GradeSearchActivity"
-            android:theme="@style/TranslucentTheme">
+          >
 
         </activity>
         <activity
