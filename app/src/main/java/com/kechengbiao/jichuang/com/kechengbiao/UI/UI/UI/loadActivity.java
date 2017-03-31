@@ -51,6 +51,7 @@ public class loadActivity extends Activity {
                     if (nowzc != zc) {
                        String z= sharedPreferences.getString("zc", "1");
                         Log.d("zzz",z);
+                        Log.d("zzzzz",nowzc+"");
                         editor.putString("zc",Integer.parseInt(z)+1+"");
                         editor.commit();
 

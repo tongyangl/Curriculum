@@ -377,6 +377,13 @@ public class MainActivity extends AppCompatActivity {
                 editor.commit();
                 realzc = z;
                 setkb(z);
+                Calendar calendar = Calendar.getInstance();
+                int zc = calendar.get(Calendar.WEEK_OF_YEAR);
+                Log.d("zzzz",zc+"");
+                SharedPreferences sharedPreferences1 = getSharedPreferences("zc", MODE_PRIVATE);
+                SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                editor.putInt("zcofmo", zc);
+                editor.commit();
                 title_zc.setText("第" + z + "周");
 
             }

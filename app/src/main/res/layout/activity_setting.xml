@@ -300,7 +300,7 @@
                     <TextView
                         android:textSize="18sp"
                         android:textColor="#000"
-                        android:text="开源许可（点击查看）"
+                        android:text="开源许可"
 
                         android:gravity="center_vertical"
                         android:layout_marginLeft="20dp"
