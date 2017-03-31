@@ -29,7 +29,7 @@ import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.view.MyLisetView;
  * Created by 佟杨 on 2017/3/14.
  */
 
-public class LibraryActivity extends AppCompatActivity {
+public class LibraryActivity extends baseactivity {
     private MyLisetView listView;
     private FloatingActionButton fab;
     private EditText search_text;

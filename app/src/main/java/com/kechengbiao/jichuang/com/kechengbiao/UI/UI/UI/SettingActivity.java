@@ -48,7 +48,7 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
  * Created by 佟杨 on 2017/3/22.
  */
 
-public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
+public class SettingActivity extends baseactivity implements View.OnClickListener {
     private Toolbar toolbar;
     private CardView about;
     private CardView git;
@@ -65,6 +65,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //透明状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();

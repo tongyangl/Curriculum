@@ -33,7 +33,7 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 /**
  * Created by 佟杨 on 2017/3/16.
  */
-public class GradeSearchActivity extends AppCompatActivity {
+public class GradeSearchActivity extends baseactivity {
     private TextInputLayout textInputLayout_number;
     private TextInputLayout textInputLayout_password;
     private EditText number;

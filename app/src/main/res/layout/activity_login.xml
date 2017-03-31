@@ -10,6 +10,8 @@
     tools:context="com.kechengbiao.jichuang.com.kechengbiao.UI.UI.LoginActivity">
 
     <android.support.v7.widget.Toolbar
+        android:background="?attr/mytheme"
+
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">

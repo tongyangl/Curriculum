@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
+        android:background="?attr/mytheme"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
@@ -195,7 +196,46 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:text="主题设置"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center_vertical"
+                        android:text="少女粉"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <View
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="#BEBEBE"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px">
 
+                    </View>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
             <TextView
                 android:textColor="@color/colorAccent"
                 android:layout_marginLeft="20dp"

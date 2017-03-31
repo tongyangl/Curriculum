@@ -13,10 +13,31 @@
         <item name="cardCornerRadius">6dp</item>
         <item name="cardElevation">3dp</item>
     </style>
+
     <style name="TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
 
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="theme_pink" parent="Theme.AppCompat.Light.NoActionBar">
+           <item name="mytheme">@color/theme_pink</item>
+    </style>
+    <style name="theme_yellow" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mytheme">@color/theme_yellow</item>
+    </style>
+    <style name="theme_blue" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mytheme">@color/theme_blue</item>
+    </style>
+    <style name="theme_green" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mytheme">@color/theme_green</item>
+    </style>
+    <style name="theme_purple" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mytheme">@color/theme_purple</item>
+    </style>
+    <style name="theme_red" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="mytheme">@color/theme_red</item>
+    </style>
+
 </resources>

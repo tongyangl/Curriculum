@@ -18,7 +18,7 @@ import java.util.Calendar;
  * Created by 佟杨 on 2017/3/24.
  */
 
-public class loadActivity extends Activity {
+public class loadActivity extends baseactivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

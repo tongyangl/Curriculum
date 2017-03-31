@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources >
+
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="theme_red">#FF0000</color>
+    <color name="theme_yellow">#EEC900</color>
+    <color name="theme_green">#32CD32</color>
+    <color name="theme_purple">#9B30FF</color>
+    <color name="theme_blue">#1C86EE</color>
+    <color name="theme_pink">#FF69B4 </color>
+ <attr name="mytheme" format="reference">
+
+ </attr>
 </resources>

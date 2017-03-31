@@ -31,7 +31,7 @@ import java.util.Map;
  * Created by 佟杨 on 2017/3/16.
  */
 
-public class GradeActivity extends AppCompatActivity {
+public class GradeActivity extends baseactivity {
     private ListView listView;
     private String grade;
     private List<Map<String, String>> list;

@@ -12,65 +12,72 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
-            android:fitsSystemWindows="true"
-            android:background="@drawable/home_header"
             android:id="@+id/toolbar"
-            app:contentInsetStart="0dp"
+            android:background="?attr/mytheme"
             android:layout_width="match_parent"
-            android:layout_height="70dp">
+            android:layout_height="70dp"
+            android:fitsSystemWindows="true"
+            app:contentInsetStart="0dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
+                    android:id="@+id/title_zc"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:clickable="true"
                     android:drawablePadding="-5dp"
                     android:drawableRight="@drawable/text_up"
-                    android:clickable="true"
-                    android:id="@+id/title_zc"
-                    android:textSize="15sp"
                     android:gravity="center"
                     android:text="第1周"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content" />
+                    android:textColor="#fff"
+                    android:textSize="15sp" />
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
-<LinearLayout
-    android:background="#F0F8FF"
-    android:visibility="gone"
-    android:id="@+id/hscroview"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="70dp">
-    <TextView
-        android:layout_marginTop="10dp"
-        android:background="#F0F8FF"
-        android:clickable="true"
-        android:id="@+id/resetzc"
-        android:paddingBottom="5dp"
-        android:text="当前周"
-        android:textSize="12sp"
 
-        android:drawableTop="@drawable/btn_radio_change"
-        android:gravity="center"
-        android:layout_width="50dp"
-        android:layout_height="70dp" />
-    <HorizontalScrollView
-        android:scrollbars="none"
-        android:background="#F0FFFF"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RadioGroup
-            android:orientation="horizontal"
-            android:id="@+id/radioGroup"
+        <LinearLayout
+            android:id="@+id/hscroview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="70dp"
+            android:background="#F0F8FF"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/resetzc"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:background="#F0F8FF"
+                android:clickable="true"
+                android:drawableTop="@drawable/btn_radio_change"
+
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="当前周"
+                android:textSize="12sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F0FFFF"
+                android:scrollbars="none">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
 
-        </RadioGroup>
-    </HorizontalScrollView>
+                </RadioGroup>
+            </HorizontalScrollView>
 
 
-</LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/week"
@@ -150,90 +157,94 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/week">
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
 
-           <LinearLayout
-               android:id="@+id/kb"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:background="#0000"
-               android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-               <include
-                   android:id="@+id/jieci"
-                   layout="@layout/jieci">
+                <LinearLayout
+                    android:id="@+id/kb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0000"
+                    android:orientation="horizontal">
 
-               </include>
+                    <include
+                        android:id="@+id/jieci"
+                        layout="@layout/jieci">
 
-               <include
-                   android:id="@+id/one"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/one"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/two"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/two"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/three"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/three"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/four"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/four"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/five"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/five"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/six"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/six"
+                        layout="@layout/kecheng">
 
-               <include
-                   android:id="@+id/seven"
-                   layout="@layout/kecheng">
+                    </include>
 
-               </include>
+                    <include
+                        android:id="@+id/seven"
+                        layout="@layout/kecheng">
 
-           </LinearLayout>
-           <LinearLayout
-               android:orientation="horizontal"
-               android:layout_below="@+id/kb"
-               android:layout_width="match_parent"
-               android:layout_height="100dp">
-               <TextView
-                   android:gravity="center"
-                   android:layout_weight="0.5"
-                   android:ems="1"
-                   android:text="备注"
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent" />
-               <TextView
-                   android:layout_marginLeft="20dp"
-                   android:layout_marginRight="20dp"
-                   android:textColor="#FF3030"
-                   android:gravity="center"
-                   android:id="@+id/beizhu"
-                   android:layout_weight="7"
-                   android:layout_gravity="center"
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent" />
-           </LinearLayout>
-       </RelativeLayout>
+                    </include>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/kb"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:ems="1"
+                        android:gravity="center"
+                        android:text="备注" />
+
+                    <TextView
+                        android:id="@+id/beizhu"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="7"
+                        android:gravity="center"
+                        android:textColor="#FF3030" />
+                </LinearLayout>
+            </RelativeLayout>
 
 
         </ScrollView>

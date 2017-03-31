@@ -28,6 +28,7 @@ import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.HttpLogin;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.KB;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Internet.getLibtary;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui.baseactivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +41,7 @@ import org.jsoup.select.Elements;
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends baseactivity {
   private TextInputLayout textInputLayout_number;
     private  TextInputLayout textInputLayout_password;
     private EditText number;

@@ -49,7 +49,7 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
  * Created by 佟杨 on 2017/3/7.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends baseactivity {
     private NavigationView ngv;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;

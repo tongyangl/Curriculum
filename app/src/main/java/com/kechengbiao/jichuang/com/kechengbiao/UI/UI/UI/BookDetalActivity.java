@@ -18,7 +18,7 @@ import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Ascytask.BookDetalAsyncTas
  * Created by 佟杨 on 2017/3/15.
  */
 
-public class BookDetalActivity extends AppCompatActivity {
+public class BookDetalActivity extends baseactivity {
     private TextView textView;
     private android.support.v7.widget.Toolbar toolbar;
     private WebView webView;
