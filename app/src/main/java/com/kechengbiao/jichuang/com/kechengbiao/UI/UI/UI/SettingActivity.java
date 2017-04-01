@@ -18,17 +18,13 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -67,6 +63,7 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
     private CardView themeset;
     private TextView theme_tv;
     private String theme;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +81,7 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         week = (CardView) findViewById(R.id.week);
         zcc = (TextView) findViewById(R.id.zc);
         themeset = (CardView) findViewById(R.id.theme);
-        theme_tv= (TextView) findViewById(R.id.theme_tv);
+        theme_tv = (TextView) findViewById(R.id.theme_tv);
         setSupportActionBar(toolbar);
         themeset.setOnClickListener(this);
         toolbar.setNavigationIcon(R.drawable.ic_back);
@@ -101,8 +98,28 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         } else {
             kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
         }
-        theme=sharedPreferences1.getString("theme","pink");
-        theme_tv.setText(sharedPreferences1.getString("theme","pink"));
+        theme = sharedPreferences1.getString("theme", "pink");
+        switch (theme) {
+            case "pink":
+                theme_tv.setText("少女粉");
+                break;
+            case "purple":
+                theme_tv.setText("基佬紫");
+                break;
+            case "yellow":
+                theme_tv.setText("咸蛋黄");
+                break;
+            case "blue":
+                theme_tv.setText("胖子蓝");
+                break;
+            case "green":
+                theme_tv.setText("早苗绿");
+                break;
+            case "red":
+                theme_tv.setText("姨妈红");
+                break;
+
+        }
         kbview.setOnClickListener(this);
         about.setOnClickListener(this);
         git.setOnClickListener(this);
@@ -111,7 +128,7 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         clear.setOnClickListener(this);
         SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
         vercode.setText(getVerName() + " ");
-        zcc.setText(sharedPreferences.getString("zc", "1"));
+        zcc.setText("第" + sharedPreferences.getString("zc", "1") + "周");
         complete = new DownLoadComplete();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
@@ -421,16 +438,14 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences sharedPreferences=getSharedPreferences("set",MODE_PRIVATE);
-        if (theme.equals(sharedPreferences.getString("theme","pink"))){
+        SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+        if (theme.equals(sharedPreferences.getString("theme", "pink"))) {
 
-        }else {
+        } else {
             Util.reload(this);
 
         }
     }
-
-
 
 
 }

@@ -7,14 +7,12 @@
         <item
             android:icon="@drawable/ic_class"
             android:id="@+id/kecheng"
-            android:checkable="true"
             android:title="课表信息">
 
         </item>
         <item
             android:icon="@drawable/ic_book"
             android:id="@+id/library"
-            android:checkable="true"
             android:title="图书查询"
 
             >
@@ -23,7 +21,6 @@
         <item
             android:icon="@drawable/ic_grade"
             android:id="@+id/gradesearch"
-            android:checkable="true"
             android:title="成绩查询">
 
         </item>
@@ -37,9 +34,8 @@
         <menu>
 
             <item
-                android:icon="@drawable/ic_setting"
+                android:icon="@drawable/ic_settings_black_24dp"
                 android:id="@+id/setting"
-                android:checkable="true"
 
                 android:title="设置">
 

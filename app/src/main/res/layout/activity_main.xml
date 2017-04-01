@@ -13,13 +13,13 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:background="?attr/mytheme"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="?attr/mytheme"
             android:fitsSystemWindows="true"
-            app:contentInsetStart="0dp">
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -86,8 +86,12 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/top"
-            android:background="#FFFAF0"
+
+            android:background="?attr/mytheme"
             android:orientation="horizontal">
+
+            <!--android:background="#FFFAF0"-->
+
 
             <TextView
                 android:id="@+id/month"
@@ -96,60 +100,74 @@
                 android:layout_weight="0.5"
                 android:ems="1"
                 android:gravity="center"
+                android:textColor="#FFF"
                 android:textSize="12sp" />
 
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周一" />
+                android:text="周一"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-
                 android:gravity="center"
-                android:text="周二" />
+
+                android:text="周二"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-
                 android:gravity="center"
-                android:text="周三" />
+
+                android:text="周三"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周四" />
+                android:text="周四"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周五" />
+                android:text="周五"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="周六" />
+                android:text="周六"
+                android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="0dp"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-
                 android:gravity="center"
-                android:text="周天" />
+                android:text="周天"
+                android:textColor="#FFF" />
 
 
         </LinearLayout>

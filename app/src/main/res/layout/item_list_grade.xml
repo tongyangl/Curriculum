@@ -18,6 +18,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:textColor="#000"
                 android:id="@+id/classname"
 
                 android:layout_width="200dp"
@@ -27,6 +28,7 @@
                 android:textSize="14sp" />
 
             <TextView
+
                 android:id="@+id/grade"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
@@ -40,6 +42,8 @@
             android:layout_weight="1">
 
             <TextView
+                android:textColor="#000"
+
                 android:id="@+id/xuefen"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -48,6 +52,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:textColor="#000"
 
                 android:id="@+id/xueshi"
                 android:layout_width="wrap_content"
