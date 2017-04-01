@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -42,28 +43,23 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
 
 public class LoginActivity extends baseactivity {
-  private TextInputLayout textInputLayout_number;
-    private  TextInputLayout textInputLayout_password;
+    private TextInputLayout textInputLayout_number;
+    private TextInputLayout textInputLayout_password;
     private EditText number;
-    private  EditText password;
+    private EditText password;
     private Button login;
     private ProgressDialog progressDialog;
     private TextView data;
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //透明状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            // Translucent status bar
-            window.setFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+
         setContentView(R.layout.activity_login);
-        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("导入课表");
+        toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -72,19 +68,19 @@ public class LoginActivity extends baseactivity {
                 finish();
             }
         });
-        number= (EditText) findViewById(R.id.number);
-        password= (EditText) findViewById(R.id.passname);
-        data= (TextView) findViewById(R.id.choose_data);
-        textInputLayout_number= (TextInputLayout) findViewById(R.id.textinput_number);
-        textInputLayout_password= (TextInputLayout) findViewById(R.id.textinput_password);
-        SharedPreferences sharedPreferences=getSharedPreferences("userinfo",MODE_PRIVATE);
-        if (!sharedPreferences.getString("username","").equals("")){
-            number.setText(sharedPreferences.getString("username",""));
+        number = (EditText) findViewById(R.id.number);
+        password = (EditText) findViewById(R.id.passname);
+        data = (TextView) findViewById(R.id.choose_data);
+        textInputLayout_number = (TextInputLayout) findViewById(R.id.textinput_number);
+        textInputLayout_password = (TextInputLayout) findViewById(R.id.textinput_password);
+        SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+        if (!sharedPreferences.getString("username", "").equals("")) {
+            number.setText(sharedPreferences.getString("username", ""));
         }
-        if (!sharedPreferences.getString("password","").equals("")){
-           password.setText(sharedPreferences.getString("password",""));
+        if (!sharedPreferences.getString("password", "").equals("")) {
+            password.setText(sharedPreferences.getString("password", ""));
         }
-        login= (Button) findViewById(R.id.button_login);
+        login = (Button) findViewById(R.id.button_login);
         data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,11 +101,11 @@ public class LoginActivity extends baseactivity {
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        int a=Integer.valueOf(pickerView.getValue());
-                        data.setText(zc[a-1]);
+                        int a = Integer.valueOf(pickerView.getValue());
+                        data.setText(zc[a - 1]);
                     }
                 });
-                builder.setNegativeButton("取消",null);
+                builder.setNegativeButton("取消", null);
                 builder.show();
             }
         });
@@ -130,15 +126,15 @@ public class LoginActivity extends baseactivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (data.getText().toString().contains("点击")){
+                if (data.getText().toString().contains("点击")) {
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
-                }else {
-                    if (number.getText().length()==0||password.getText().length()==0){
+                } else {
+                    if (number.getText().length() == 0 || password.getText().length() == 0) {
                         login.setClickable(false);
                         login.setBackgroundResource(R.drawable.button_login2);
 
-                    }else {
+                    } else {
                         login.setClickable(true);
                         login.setBackgroundResource(R.drawable.button_login);
 
@@ -146,7 +142,7 @@ public class LoginActivity extends baseactivity {
                 }
             }
         });
-            number.addTextChangedListener(new TextWatcher() {
+        number.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -159,15 +155,15 @@ public class LoginActivity extends baseactivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (data.getText().toString().contains("点击")){
+                if (data.getText().toString().contains("点击")) {
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
-                }else {
-                    if (number.getText().length()==0||password.getText().length()==0){
+                } else {
+                    if (number.getText().length() == 0 || password.getText().length() == 0) {
                         login.setClickable(false);
                         login.setBackgroundResource(R.drawable.button_login2);
 
-                    }else {
+                    } else {
                         login.setClickable(true);
                         login.setBackgroundResource(R.drawable.button_login);
 
@@ -190,21 +186,22 @@ public class LoginActivity extends baseactivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (data.getText().toString().contains("点击")){
+                if (data.getText().toString().contains("点击")) {
 
                     login.setClickable(false);
                     login.setBackgroundResource(R.drawable.button_login2);
-                }else {
-                    if (number.getText().length()==0||password.getText().length()==0){
+                } else {
+                    if (number.getText().length() == 0 || password.getText().length() == 0) {
                         login.setClickable(false);
                         login.setBackgroundResource(R.drawable.button_login2);
 
-                    }else {
+                    } else {
                         login.setClickable(true);
                         login.setBackgroundResource(R.drawable.button_login);
 
                     }
-                }}
+                }
+            }
         });
 
 
@@ -308,7 +305,7 @@ public class LoginActivity extends baseactivity {
         @Override
         protected void onPostExecute(Integer integer) {
             if (integer == 302) {
-                GetKBAsynctask getKBAsynctask=new GetKBAsynctask();
+                GetKBAsynctask getKBAsynctask = new GetKBAsynctask();
                 getKBAsynctask.execute(data.getText().toString().trim());
             } else if (integer == 200) {
                 progressDialog.dismiss();
@@ -339,13 +336,21 @@ public class LoginActivity extends baseactivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             try {
+                Document document = Jsoup.parse(s);
+
+                String name = document.getElementById("Top1_divLoginName").text();
+                SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("name", name);
+                editor.commit();
                 savekb(s);
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             progressDialog.dismiss();
-            Intent intent=new Intent();
+            Intent intent = new Intent();
             intent.setAction("getkb");
             intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
             sendBroadcast(intent);
@@ -354,13 +359,13 @@ public class LoginActivity extends baseactivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String data=params[0];
+            String data = params[0];
             SharedPreferences preferences1 = getSharedPreferences("CookieString",
                     Activity.MODE_PRIVATE);
             KB kb = new KB();
             String cookie1 = preferences1.getString("cookie", "");
 
-            String kb3 = kb.EveryClass(cookie1,data);
+            String kb3 = kb.EveryClass(cookie1, data);
             return kb3;
         }
     }
@@ -369,7 +374,7 @@ public class LoginActivity extends baseactivity {
         JSONArray array = new JSONArray();
         Document document = Jsoup.parse(string);
         Elements tr = document.select("table").select("tr");
-     String beizhu=   tr.get(tr.size()-1).select("td").text();
+        String beizhu = tr.get(tr.size() - 1).select("td").text();
 
         for (int i = 2; i < tr.size() - 1; i++) {
             Elements td = tr.get(i).select("td");
@@ -425,7 +430,7 @@ public class LoginActivity extends baseactivity {
         SharedPreferences sharedPreferences = getSharedPreferences("kb", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("kb", array.toString());
-        editor.putString("beizhu",beizhu);
+        editor.putString("beizhu", beizhu);
         editor.commit();
     }
 

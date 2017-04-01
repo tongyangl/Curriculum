@@ -1,19 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:orientation="vertical"
-    android:background="@drawable/header_image"
     android:layout_width="match_parent"
-    android:layout_height="160dp">
+    android:layout_height="160dp"
+    android:background="?attr/mytheme"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/personimaage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/ic_person_black_24dp" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/personimaage"
+            android:layout_marginLeft="35dp"
+            android:gravity="center"
+            android:text="个人信息"
+            android:textColor="#fff" />
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_marginTop="40dp"
+          android:layout_alignParentRight="true"
+          android:layout_width="wrap_content"
+          android:layout_height="100dp">
+          <TextView
+              android:text="未登录"
+              android:id="@+id/name"
+              android:layout_width="wrap_content"
+              android:layout_height="30dp"
+              android:layout_alignParentRight="true"
+              android:layout_marginRight="30dp"
+              android:gravity="center"
+              android:textColor="#fff" />
+
+          <TextView
+              android:id="@+id/number"
+              android:layout_width="wrap_content"
+              android:layout_height="30dp"
+              android:layout_alignParentRight="true"
+              android:layout_below="@+id/name"
+              android:layout_marginRight="30dp"
+              android:gravity="center"
+              android:textColor="#fff" />
+      </LinearLayout>
+
+    </RelativeLayout>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
-    <TextView
-        android:layout_marginLeft="20dp"
-        android:textColor="#000"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:text="长春大学"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="#fff"
+        android:textSize="20sp" />
 </LinearLayout>

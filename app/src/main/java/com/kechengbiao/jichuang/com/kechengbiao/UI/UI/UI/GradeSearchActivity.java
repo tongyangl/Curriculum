@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -49,6 +50,8 @@ public class GradeSearchActivity extends baseactivity {
         setContentView(R.layout.activity_grade_search);
         toolbar= (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("成绩查询");
+        toolbar.setTitleTextColor(Color.WHITE);
+
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,7 @@ package com.kechengbiao.jichuang.com.kechengbiao.UI.UI;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.util.Log;
 
@@ -84,7 +85,15 @@ public class Util extends Activity {
             }
         }
     }
+    public  static void reload(Activity activity){
 
+            Intent intent = activity.getIntent();
+            activity.overridePendingTransition(0, 0);//不设置进入退出动画
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            activity.finish();
+            activity.overridePendingTransition(0, 0);
+            activity.startActivity(intent);
+    }
     public static boolean isNumeric(String str){
         for (int i = 0; i < str.length(); i++){
             System.out.println(str.charAt(i));

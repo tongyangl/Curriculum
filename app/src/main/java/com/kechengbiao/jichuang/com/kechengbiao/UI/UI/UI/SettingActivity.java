@@ -11,12 +11,14 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
+import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -61,22 +64,16 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
     private ProgressDialog dialog;
     private CardView kbview;
     private TextView kbview_tv;
-
+    private CardView themeset;
+    private TextView theme_tv;
+    private String theme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //透明状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            // Translucent status bar
-            window.setFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
         setContentView(R.layout.activity_setting);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("设置");
+        toolbar.setTitleTextColor(Color.WHITE);
         kbview = (CardView) findViewById(R.id.kbview);
         kbview_tv = (TextView) findViewById(R.id.kbview_tv);
         update = (CardView) findViewById(R.id.update);
@@ -86,8 +83,10 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         clear = (CardView) findViewById(R.id.clear);
         week = (CardView) findViewById(R.id.week);
         zcc = (TextView) findViewById(R.id.zc);
+        themeset = (CardView) findViewById(R.id.theme);
+        theme_tv= (TextView) findViewById(R.id.theme_tv);
         setSupportActionBar(toolbar);
-
+        themeset.setOnClickListener(this);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,13 +94,15 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
                 finish();
             }
         });
-        SharedPreferences sharedPreferences1=getSharedPreferences("set",MODE_PRIVATE);
-        if (sharedPreferences1.getInt("kbview",0)==0){
+        SharedPreferences sharedPreferences1 = getSharedPreferences("set", MODE_PRIVATE);
+        if (sharedPreferences1.getInt("kbview", 0) == 0) {
             kbview_tv.setText("仅显示本周要上的课程");
 
-        }else {
+        } else {
             kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
         }
+        theme=sharedPreferences1.getString("theme","pink");
+        theme_tv.setText(sharedPreferences1.getString("theme","pink"));
         kbview.setOnClickListener(this);
         about.setOnClickListener(this);
         git.setOnClickListener(this);
@@ -194,28 +195,29 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
                 getServiceCode getServiceCode = new getServiceCode();
                 getServiceCode.execute();
                 break;
-            case  R.id.kbview:
-                final String items[]={
-                  "仅显示本周课程","显示所有课程"
+            case R.id.kbview:
+                final String items[] = {
+                        "仅显示本周课程", "显示所有课程"
                 };
+                SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                final SharedPreferences.Editor editor = sharedPreferences.edit();
+
                 AlertDialog dialog = new AlertDialog.Builder(this).setTitle("单选对话框")
-                        .setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+                        .setSingleChoiceItems(items, sharedPreferences.getInt("kbview", 0), new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                SharedPreferences sharedPreferences=getSharedPreferences("set",MODE_PRIVATE);
-                                SharedPreferences.Editor editor=sharedPreferences.edit();
 
-                                if (which==0){
-                                    editor.putInt("kbview",which);
+                                if (which == 0) {
+                                    editor.putInt("kbview", which);
                                     kbview_tv.setText("仅显示本周要上的课程");
-                                }else {
-                                    editor.putInt("kbview",1);
+                                } else {
+                                    editor.putInt("kbview", 1);
                                     kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
                                 }
                                 editor.commit();
-                                Log.d("kkkk",which+"");
-                                Intent intent1=new Intent();
+                                Log.d("kkkk", which + "");
+                                Intent intent1 = new Intent();
                                 intent1.setAction("resetkb");
                                 sendBroadcast(intent1);
 
@@ -224,6 +226,12 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
                             }
                         }).create();
                 dialog.show();
+                break;
+            case R.id.theme:
+                Intent intent1 = new Intent(this, themesetactivity.class);
+                startActivity(intent1);
+                break;
+
 
         }
     }
@@ -409,4 +417,20 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
             return null;
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences=getSharedPreferences("set",MODE_PRIVATE);
+        if (theme.equals(sharedPreferences.getString("theme","pink"))){
+
+        }else {
+            Util.reload(this);
+
+        }
+    }
+
+
+
+
 }

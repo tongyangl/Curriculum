@@ -20,24 +20,31 @@
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+    <style name="AppTheme.Actionbar" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <item name="actionMenuTextColor">#fff</item>
+        <item name="actionMenuTextAppearance">@style/AppTheme.actionMenuTextSize</item>
 
-    <style name="theme_pink" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <style name="theme_pink" parent="AppTheme.Actionbar">
            <item name="mytheme">@color/theme_pink</item>
     </style>
-    <style name="theme_yellow" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="theme_yellow" parent="AppTheme.Actionbar">
         <item name="mytheme">@color/theme_yellow</item>
     </style>
-    <style name="theme_blue" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="theme_blue" parent="AppTheme.Actionbar">
         <item name="mytheme">@color/theme_blue</item>
     </style>
-    <style name="theme_green" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="theme_green" parent="AppTheme.Actionbar">
         <item name="mytheme">@color/theme_green</item>
     </style>
-    <style name="theme_purple" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="theme_purple" parent="AppTheme.Actionbar">
         <item name="mytheme">@color/theme_purple</item>
     </style>
-    <style name="theme_red" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="theme_red" parent="AppTheme.Actionbar">
         <item name="mytheme">@color/theme_red</item>
     </style>
-
+    <style name="AppTheme.actionMenuTextSize" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

@@ -42,6 +42,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
@@ -71,6 +73,8 @@ public class MainActivity extends baseactivity {
     private String realzc = "";
     private BroadcastReceiver receiver;
     private TextView bz;
+    private String theme;
+    private SharedPreferences preferences;
 
     @Override
     protected void onStart() {
@@ -85,20 +89,15 @@ public class MainActivity extends baseactivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //透明状态栏
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window = getWindow();
-            // Translucent status bar
-            window.setFlags(
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
 
         setContentView(R.layout.activity_main);
         initId();
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
+        preferences = getSharedPreferences("set", MODE_PRIVATE);
+        theme = preferences.getString("theme", "pink");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0) {
         };
         receiver = new BroadcastReceiver() {
@@ -106,10 +105,26 @@ public class MainActivity extends baseactivity {
             public void onReceive(Context context, Intent intent) {
                 if (intent.getAction().equals("getkb")) {
                     setkb("1");
+                    View view = ngv.getHeaderView(0);
+                    TextView name = (TextView) view.findViewById(R.id.name);
+                    TextView number = (TextView) view.findViewById(R.id.number);
+                    SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+                    String a = sharedPreferences.getString("name", "");
+                    if (!a.equals("")){
+                        String reg = "[^\u4e00-\u9fa5]";
+                        String n = a.replaceAll(reg, "");
+                        name.setText("姓名:" + n);
+
+                        a= a.trim();
+                        String regEx = "[^0-9]";
+                        Pattern p = Pattern.compile(regEx);
+                        Matcher m = p.matcher(a);
+                        number.setText("学号:" + m);
+                    }
                     title_zc.setText("第1周");
                 } else if (intent.getAction().equals("resetkb")) {
                     SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
-                    title_zc.setText("第"+sharedPreferences.getString("zc", "1")+"周");
+                    title_zc.setText("第" + sharedPreferences.getString("zc", "1") + "周");
                     setkb(sharedPreferences.getString("zc", "1"));
                 }
             }
@@ -201,6 +216,24 @@ public class MainActivity extends baseactivity {
         Calendar calendar = Calendar.getInstance();
         int mo = calendar.get(Calendar.MONTH) + 1;
         int zc = calendar.get(Calendar.WEEK_OF_YEAR);
+        View view = ngv.getHeaderView(0);
+        TextView name = (TextView) view.findViewById(R.id.name);
+        TextView number = (TextView) view.findViewById(R.id.number);
+        SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
+        String c = sharedPreferences.getString("name", "");
+        if (!c.equals("")) {
+            c = c.trim();
+           String b=sharedPreferences.getString("username", "");
+            number.setText("学号:"+b);
+            String reg = "[^\u4e00-\u9fa5]";
+            String n = c.replaceAll(reg, "");
+            name.setText("姓名:" + n);
+
+
+
+
+        }
+
 
         month.setText(mo + "\n月");
         SharedPreferences sharedPreferences1 = getSharedPreferences("zc", MODE_PRIVATE);
@@ -379,7 +412,7 @@ public class MainActivity extends baseactivity {
                 setkb(z);
                 Calendar calendar = Calendar.getInstance();
                 int zc = calendar.get(Calendar.WEEK_OF_YEAR);
-                Log.d("zzzz",zc+"");
+                Log.d("zzzz", zc + "");
                 SharedPreferences sharedPreferences1 = getSharedPreferences("zc", MODE_PRIVATE);
                 SharedPreferences.Editor editor1 = sharedPreferences.edit();
                 editor.putInt("zcofmo", zc);
@@ -443,7 +476,7 @@ public class MainActivity extends baseactivity {
                         settextview(i, textView);
                     }
                 } else {
-                    textView = CreatTV("", "", "",  Class.split("---------------------")[0]+"/"+Class.split("---------------------")[1], a, 2);
+                    textView = CreatTV("", "", "", Class.split("---------------------")[0] + "/" + Class.split("---------------------")[1], a, 2);
                     settextview(i, textView);
                 }
             } else {
@@ -765,4 +798,16 @@ public class MainActivity extends baseactivity {
         return super.onKeyDown(keyCode, event);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (theme.equals(preferences.getString("theme", "pink"))) {
+
+        } else {
+            Util.reload(this);
+
+        }
+    }
+
 }

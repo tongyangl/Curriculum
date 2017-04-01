@@ -7,9 +7,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="theme_red">#FF0000</color>
-    <color name="theme_yellow">#EEC900</color>
-    <color name="theme_green">#32CD32</color>
-    <color name="theme_purple">#9B30FF</color>
+    <color name="theme_yellow">#EEAD0E</color>
+    <color name="theme_green">#9ACD32</color>
+    <color name="theme_purple">#7D26CD</color>
     <color name="theme_blue">#1C86EE</color>
     <color name="theme_pink">#FF69B4 </color>
  <attr name="mytheme" format="reference">

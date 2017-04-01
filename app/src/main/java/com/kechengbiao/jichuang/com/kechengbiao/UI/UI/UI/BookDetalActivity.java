@@ -2,6 +2,7 @@ package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class BookDetalActivity extends baseactivity {
         toolbar= (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("图书详情");
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(Color.WHITE);
 
         toolbar.setTitle("图书详情");
         toolbar.setNavigationIcon(R.drawable.ic_back);

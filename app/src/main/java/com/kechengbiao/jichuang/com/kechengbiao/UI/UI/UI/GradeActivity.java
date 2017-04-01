@@ -1,6 +1,7 @@
 package com.kechengbiao.jichuang.com.kechengbiao.UI.UI.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -46,11 +47,14 @@ public class GradeActivity extends baseactivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("查询");
+        toolbar.setSubtitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         listView = (ListView) findViewById(R.id.lv);
         Intent intent = getIntent();
         grade = intent.getStringExtra("grade");
         getGradelist(grade);
+        toolbar.setTitleTextColor(Color.WHITE);
+
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
