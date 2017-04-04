@@ -1,124 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#00000000"
-    android:orientation="vertical"
     android:layout_width="0dp"
+    android:layout_height="wrap_content"
     android:layout_weight="0.5"
-    android:layout_height="wrap_content">
+    android:background="#00000000"
+    android:orientation="vertical">
 
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
+        android:id="@+id/textView"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:ems="1"
+        android:gravity="center"
         android:text="1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/textView">
+        android:textColor="#000"
+        android:textSize="13sp">
 
     </TextView>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
         android:ems="1"
+        android:gravity="center"
         android:text="2"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-       >
+        android:layout_height="1px"
+        android:background="#BEBEBE">
 
-    </TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="3"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
- >
+    </View>
 
-</TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="4"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-   >
-
-</TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="5"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-   >
-
-</TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="6"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    >
-
-</TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="7"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    >
-
-</TextView> <TextView
-    android:gravity="center"
-    android:textSize="13sp"
-    android:ems="1"
-    android:text="8"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    >
-
-</TextView>
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
         android:ems="1"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="#000"
+        android:textSize="13sp">
+
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:ems="1"
+        android:gravity="center"
         android:text="9"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
+        android:textColor="#000"
+        android:textSize="13sp">
 
     </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
         android:ems="1"
+        android:gravity="center"
         android:text="10"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
+        android:textColor="#000"
+        android:textSize="13sp">
 
     </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
         android:ems="1"
+        android:gravity="center"
         android:text="11"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        >
+        android:textColor="#000"
+        android:textSize="13sp">
 
     </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
+
     <TextView
-        android:gravity="center"
-        android:textSize="13sp"
-        android:ems="1"
-        android:text="12"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        >
+        android:ems="1"
+        android:gravity="center"
+        android:text="12"
+        android:textColor="#000"
+        android:textSize="13sp">
 
     </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#BEBEBE">
+
+    </View>
 </LinearLayout>

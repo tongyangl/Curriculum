@@ -7,15 +7,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -26,11 +31,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.kechengbiao.jichuang.com.kechengbiao.R;
@@ -41,11 +47,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
+
 
 /**
  * Created by 佟杨 on 2017/3/7.
@@ -75,7 +83,11 @@ public class MainActivity extends baseactivity {
     private TextView bz;
     private String theme;
     private SharedPreferences preferences;
-
+    private ScrollView background;
+    private LinearLayout kb;
+    private TextView nokb;
+    private LinearLayout bzv;
+    //  private RelativeLayout background;
     @Override
     protected void onStart() {
         super.onStart();
@@ -110,12 +122,12 @@ public class MainActivity extends baseactivity {
                     TextView number = (TextView) view.findViewById(R.id.number);
                     SharedPreferences sharedPreferences = getSharedPreferences("userinfo", MODE_PRIVATE);
                     String a = sharedPreferences.getString("name", "");
-                    if (!a.equals("")){
+                    if (!a.equals("")) {
                         String reg = "[^\u4e00-\u9fa5]";
                         String n = a.replaceAll(reg, "");
                         name.setText("姓名:" + n);
 
-                        a= a.trim();
+                        a = a.trim();
                         String regEx = "[^0-9]";
                         Pattern p = Pattern.compile(regEx);
                         Matcher m = p.matcher(a);
@@ -198,9 +210,11 @@ public class MainActivity extends baseactivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         toolbar.setTitle("课程表");
+        kb = (LinearLayout) findViewById(R.id.kb);
+        nokb = (TextView) findViewById(R.id.nokb);
         month = (TextView) findViewById(R.id.month);
         bz = (TextView) findViewById(R.id.beizhu);
-
+        background = (ScrollView) findViewById(R.id.scroll);
         layout1 = (LinearLayout) findViewById(R.id.one);
         layout2 = (LinearLayout) findViewById(R.id.two);
         layout3 = (LinearLayout) findViewById(R.id.three);
@@ -213,9 +227,9 @@ public class MainActivity extends baseactivity {
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         resetzc = (TextView) findViewById(R.id.resetzc);
         toplinear = (LinearLayout) findViewById(R.id.hscroview);
+        bzv= (LinearLayout) findViewById(R.id.bz);
         Calendar calendar = Calendar.getInstance();
         int mo = calendar.get(Calendar.MONTH) + 1;
-        int zc = calendar.get(Calendar.WEEK_OF_YEAR);
         View view = ngv.getHeaderView(0);
         TextView name = (TextView) view.findViewById(R.id.name);
         TextView number = (TextView) view.findViewById(R.id.number);
@@ -223,14 +237,11 @@ public class MainActivity extends baseactivity {
         String c = sharedPreferences.getString("name", "");
         if (!c.equals("")) {
             c = c.trim();
-           String b=sharedPreferences.getString("username", "");
-            number.setText("学号:"+b);
+            String b = sharedPreferences.getString("username", "");
+            number.setText("学号:" + b);
             String reg = "[^\u4e00-\u9fa5]";
             String n = c.replaceAll(reg, "");
             name.setText("姓名:" + n);
-
-
-
 
         }
 
@@ -242,7 +253,18 @@ public class MainActivity extends baseactivity {
         if (!sharedPreferences2.getString("kb", "").equals("")) {
             setkb(realzc);
             title_zc.setText("第" + realzc + "周");
-            Log.d("----", realzc);
+
+        } else {
+            kb.setVisibility(View.GONE);
+            nokb.setVisibility(View.VISIBLE);
+           bzv.setVisibility(View.GONE);
+            nokb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
         for (int i = 0; i < 25; i++) {
             RadioButton radioButton = new RadioButton(MainActivity.this);
@@ -349,12 +371,66 @@ public class MainActivity extends baseactivity {
                 }
             }
         });
+
+        if (Util.getBackground(this) != null) {
+
+            Drawable drawable = new BitmapDrawable(Util.getBackground(this));
+            background.setBackground(drawable);
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(receiver);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 2) {
+                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/jike";
+                File f = new File(path);
+                if (!f.exists()) {
+
+                    f.mkdir();
+                }
+
+                File file = new File(f, "background.jpg");
+
+                if (file.exists()) {
+                    file.delete();
+                }
+                Uri uri = data.getData();
+
+
+                Intent intent = new Intent("com.android.camera.action.CROP");
+                intent.setDataAndType(uri, "image/*");
+                intent.putExtra("crop", "true");
+                intent.putExtra("aspectX", background.getWidth());
+                intent.putExtra("aspectY", background.getHeight());
+                intent.putExtra("outputX", 500);
+                intent.putExtra("outputY", 500);
+                intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+                intent.putExtra("return-data", false);
+                startActivityForResult(intent, 3);
+
+
+            } else if (requestCode == 3) {
+
+
+                if (Util.getBackground(this) != null) {
+                    Drawable drawable = new BitmapDrawable(Util.getBackground(this));
+                    background.setBackground(drawable);
+                    Log.d("ccc", "3333");
+
+                }
+
+            }
+
+        }
     }
 
     @Override
@@ -377,6 +453,105 @@ public class MainActivity extends baseactivity {
         } else if (item.getItemId() == R.id.setzc) {
 
             resetzc();
+
+        } else if (item.getItemId() == R.id.share) {
+         /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+           // intent.setType("image*//**//*");
+            intent.setType("image*//*");
+            intent.putExtra("crop", true);
+            intent.putExtra("return-data", true);
+            startActivityForResult(intent, 2);*/
+
+            PopupWindow popupWindow = new PopupWindow(this);
+            final View view = getLayoutInflater().inflate(R.layout.popu_main_backset, null);
+            ImageView zidingyi = (ImageView) view.findViewById(R.id.zidingyi);
+            ImageView ic_1 = (ImageView) view.findViewById(R.id.ic_1);
+            ImageView ic_2 = (ImageView) view.findViewById(R.id.ic_2);
+            ImageView ic_3 = (ImageView) view.findViewById(R.id.ic_3);
+            ImageView ic_4 = (ImageView) view.findViewById(R.id.ic_4);
+            ImageView ic_5 = (ImageView) view.findViewById(R.id.ic_5);
+            ic_2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Resources resources = getResources();
+                    Drawable drawable = resources.getDrawable(R.drawable.ic_b22);
+                    background.setBackground(drawable);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+                    Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+
+                }
+            });
+            ic_3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Resources resources = getResources();
+                    Drawable drawable = resources.getDrawable(R.drawable.ic_b33);
+                    background.setBackground(drawable);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+                    Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+                }
+            });
+            ic_4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Resources resources = getResources();
+                    Drawable drawable = resources.getDrawable(R.drawable.ic_b44);
+                    background.setBackground(drawable);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+                    Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+                }
+            });
+            ic_5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Resources resources = getResources();
+                    Drawable drawable = resources.getDrawable(R.drawable.ic_b55);
+                    background.setBackground(drawable);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+                    Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+                }
+            });
+            ic_1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Resources resources = getResources();
+                    Drawable drawable = resources.getDrawable(R.drawable.ic_b11);
+                    background.setBackground(drawable);
+                    BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+                    Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+
+                }
+            });
+
+            zidingyi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    intent.putExtra("outputX", background.getWidth());
+                    intent.putExtra("outputY", background.getHeight());
+                    intent.putExtra("crop", true);
+                    intent.putExtra("return-data", true);
+                    startActivityForResult(intent, 2);
+                }
+            });
+
+            ColorDrawable dw = new ColorDrawable(0xffffffff);
+            popupWindow.setBackgroundDrawable(dw);
+            popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+            popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+            popupWindow.setFocusable(true);
+            popupWindow.setOutsideTouchable(true);
+             popupWindow.setAnimationStyle(R.style.take_photo_anim);
+            popupWindow.setContentView(view);
+            popupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.activity_main, null), Gravity.BOTTOM, 0, 0);
+
+
+        } else if (item.getItemId() == R.id.share1) {
+            Intent intent1 = new Intent(Intent.ACTION_SEND);
+            intent1.putExtra(Intent.EXTRA_TEXT, "我在使用极课！一款乖巧好用的课程表！快来和我一起使用吧！http://sj.qq.com/myapp/detail.htm?apkName=com.kechengbiao.jichuang.com.kechengbiao");
+            intent1.setType("text/plain");
+            startActivity(Intent.createChooser(intent1, "share"));
 
         }
         return super.onOptionsItemSelected(item);
@@ -428,6 +603,11 @@ public class MainActivity extends baseactivity {
 
     private void setkb(String zc) {
         RemoveView();
+        if (!kb.isShown()){
+            kb.setVisibility(View.VISIBLE);
+            nokb.setVisibility(View.GONE);
+            bzv.setVisibility(View.VISIBLE);
+        }
         SharedPreferences sharedPreferences = getSharedPreferences("kb", MODE_PRIVATE);
         String kb = sharedPreferences.getString("kb", "");
         String beizhu = sharedPreferences.getString("beizhu", "无备注");

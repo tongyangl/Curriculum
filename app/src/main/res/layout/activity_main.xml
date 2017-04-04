@@ -41,6 +41,7 @@
         </android.support.v7.widget.Toolbar>
 
         <LinearLayout
+
             android:id="@+id/hscroview"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -86,8 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/top"
-
-            android:background="?attr/mytheme"
+            android:background="#F0FFFF"
             android:orientation="horizontal">
 
             <!--android:background="#FFFAF0"-->
@@ -100,7 +100,7 @@
                 android:layout_weight="0.5"
                 android:ems="1"
                 android:gravity="center"
-                android:textColor="#FFF"
+                android:textColor="#000"
                 android:textSize="12sp" />
 
 
@@ -111,7 +111,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="周一"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
@@ -121,26 +121,23 @@
                 android:gravity="center"
 
                 android:text="周二"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
-
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-
                 android:text="周三"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
-
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="周四"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
@@ -149,7 +146,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="周五"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
@@ -158,7 +155,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="周六"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
             <TextView
                 android:layout_width="0dp"
@@ -167,21 +164,34 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="周天"
-                android:textColor="#FFF" />
+                android:textColor="#000" />
 
 
         </LinearLayout>
 
         <ScrollView
+            android:background="@drawable/ic_b55"
 
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/week">
 
             <RelativeLayout
+                android:id="@+id/background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+            <TextView
+                android:clickable="true"
+                android:layout_marginTop="200dp"
+                android:textSize="30sp"
+                android:text="尚未导入课表!"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:gravity="center"
+                android:id="@+id/nokb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
                 <LinearLayout
                     android:id="@+id/kb"
                     android:layout_width="match_parent"
@@ -240,7 +250,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-
+                    android:id="@+id/bz"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_below="@+id/kb"
@@ -263,14 +273,13 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="7"
                         android:gravity="center"
-                        android:textColor="#FF3030" />
+                        android:textColor="?attr/mytheme" />
                 </LinearLayout>
             </RelativeLayout>
 
 
         </ScrollView>
     </LinearLayout>
-
     <android.support.design.widget.NavigationView
         android:id="@+id/ngv"
         android:layout_width="wrap_content"

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:text="背景设置"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+     <HorizontalScrollView
+         android:layout_toLeftOf="@+id/topic"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+      <LinearLayout
+          android:orientation="vertical"
+
+          android:layout_width="match_parent"
+          android:layout_height="200dp">
+       <LinearLayout
+           android:padding="2dp"
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="160dp">
+           <ImageView
+               android:id="@+id/zidingyi"
+               android:src="@drawable/ic_color_lens_black_24dp"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+
+           <ImageView
+
+               android:id="@+id/ic_1"
+               android:src="@drawable/ic_b1"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+
+           <ImageView
+               android:id="@+id/ic_2"
+               android:src="@drawable/ic_b2"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+
+           <ImageView
+               android:id="@+id/ic_3"
+               android:src="@drawable/ic_b3"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+           <ImageView
+               android:id="@+id/ic_4"
+               android:src="@drawable/ic_b4"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+           <ImageView
+               android:id="@+id/ic_5"
+               android:background="@drawable/ic_b5"
+               android:layout_width="90dp"
+               android:layout_height="160dp" />
+       </LinearLayout>
+          <LinearLayout
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="40dp">
+              <TextView
+                  android:gravity="center"
+                  android:text="自定义"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent" />
+              <TextView
+                  android:gravity="center"
+                  android:text="背景1"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent" />
+
+              <TextView
+                  android:gravity="center"
+                  android:text="背景2"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent"
+                  android:id="@+id/textView4" />
+
+              <TextView
+                  android:gravity="center"
+                  android:text="背景3"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent" />
+              <TextView
+                  android:gravity="center"
+                  android:text="背景4"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent" />
+              <TextView
+                  android:gravity="center"
+                  android:text="背景5"
+                  android:layout_width="90dp"
+                  android:layout_height="match_parent" />
+          </LinearLayout>
+      </LinearLayout>
+
+     </HorizontalScrollView>
+
+</LinearLayout>
