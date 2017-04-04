@@ -25,6 +25,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ import cn.carbswang.android.numberpickerview.library.NumberPickerView;
  * Created by 佟杨 on 2017/3/22.
  */
 
-public class SettingActivity extends baseactivity implements View.OnClickListener {
+public class SettingActivity extends baseactivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     private Toolbar toolbar;
     private CardView about;
     private CardView git;
@@ -63,6 +64,8 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
     private CardView themeset;
     private TextView theme_tv;
     private String theme;
+    private TextView seekprogress;
+    private SeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,8 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         setContentView(R.layout.activity_setting);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("设置");
+        seekBar = (SeekBar) findViewById(R.id.seekbar);
+        seekprogress = (TextView) findViewById(R.id.seekProgress);
         toolbar.setTitleTextColor(Color.WHITE);
         kbview = (CardView) findViewById(R.id.kbview);
         kbview_tv = (TextView) findViewById(R.id.kbview_tv);
@@ -98,6 +103,8 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
         } else {
             kbview_tv.setText("显示所有课程(本周不上的课程为灰色)");
         }
+        seekBar.setProgress(sharedPreferences1.getInt("seek", 0));
+        seekprogress.setText("当前模糊度:" + sharedPreferences1.getInt("seek", 0));
         theme = sharedPreferences1.getString("theme", "pink");
         switch (theme) {
             case "pink":
@@ -120,6 +127,8 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
                 break;
 
         }
+        seekBar.setMax(100);
+        seekBar.setOnSeekBarChangeListener(this);
         kbview.setOnClickListener(this);
         about.setOnClickListener(this);
         git.setOnClickListener(this);
@@ -251,6 +260,32 @@ public class SettingActivity extends baseactivity implements View.OnClickListene
 
 
         }
+
+
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        seekprogress.setText("模糊度：" + progress);
+        SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("seek", seekBar.getProgress());
+        Log.d("zxczxc", progress + "");
+        editor.commit();
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        Log.d("vvvv","stop");
+         Intent intent=new Intent();
+        intent.setAction("setbackground");
+        intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+        sendBroadcast(intent);
     }
 
     public void resetzc() {

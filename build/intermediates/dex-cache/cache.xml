@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\cn.carbswang.android\NumberPickerView\1.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="237b2ebb3629bfdb0b874b6f023e552b41fa159b">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.carbswang.android-NumberPickerView-1.1.1_084846b6c7daacee6f4105ffa8858b346df3f5df\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,30 +21,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_8858cb484a0e7a3253a638c3cbf24c21fb27d981\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
         <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_b2a1b525323cb7f0f8affa1cd6824400ea200803\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\libs\jsoup-1.8.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.8.1_80796c5811dd0f1648162643cb96769f53b528a9\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,75 +39,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.0_c0bcb151c9dded3103c1c506dfee3b94fe9a1d70\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
         <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_0d06a0181e5112685bfeef583b7547346e0d0e9f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_df6dbb110cd943efc8d024765b719d938b35cc73\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a006b768e091e43798650640b84366198e3b39db\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_7e17913645b1e89df2bcdeb850fd0c3a2e4afb21\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\androidsdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_389a4996d39543a2b5168cc6f96eb6f88e392b69\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.zzhoujay.richtext\richtext\2.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4f4cea42c2584f63f8843098771935d136b29701">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.zzhoujay.richtext-richtext-2.2.0_10aaafe5c4b9a7c533bd03f2ee45f28ef09cbe3b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.github.nicolasjafelle\paginglistview\1.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="813900fb2a98c32193da6f120642e407f56af59b">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.nicolasjafelle-paginglistview-1.2_4590086fadf6508904e1e148ee15e73c3a8ef7a3\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -151,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="70de3c4f56136a77c2e419a46eb34953cc8d1b1f">
+        sha1="9651a1d742de4e2d3f2529f3e2f2f106b591cddd">
         <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_507a3e021aeb3d306da910b0931a61b33f1a51eb\classes.dex" />
     </item>
     <item
@@ -160,35 +70,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d0ece4b974f46f75564e0c72ab19fbe07e84808f">
+        sha1="ab62d7cf375320a2974f987f931c54ff50c9375b">
         <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5db31700e5656fc93dd8336cfd0c13bda977b237\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\佟杨\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\net.qiujuer.genius\blur\2.0.0-beta4\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.4.0_b3f31dcb071b167cf161b47c377ed0491d77c8c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_2ccb323654a383c8e9a40029b0cd1fd2dd8df2b9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_89c6f2118e62c996dec014e4ab3eeb3916857f92\classes.dex" />
+        sha1="8a97b6603c0e43c7cd97612f3735a36928a61c6e">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\net.qiujuer.genius-blur-2.0.0-beta4_a1dc724a617ee10a5bfb87921082b065737c3140\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -252,6 +144,123 @@
         revision="25.0.2"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_3a840447002294c71eec06ae40a90d7ded0a6f42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\cn.carbswang.android\NumberPickerView\1.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="237b2ebb3629bfdb0b874b6f023e552b41fa159b">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.carbswang.android-NumberPickerView-1.1.1_084846b6c7daacee6f4105ffa8858b346df3f5df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_8858cb484a0e7a3253a638c3cbf24c21fb27d981\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\libs\jsoup-1.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.8.1_80796c5811dd0f1648162643cb96769f53b528a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.0_c0bcb151c9dded3103c1c506dfee3b94fe9a1d70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_df6dbb110cd943efc8d024765b719d938b35cc73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a006b768e091e43798650640b84366198e3b39db\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_7e17913645b1e89df2bcdeb850fd0c3a2e4afb21\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\androidsdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_389a4996d39543a2b5168cc6f96eb6f88e392b69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.zzhoujay.richtext\richtext\2.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4f4cea42c2584f63f8843098771935d136b29701">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.zzhoujay.richtext-richtext-2.2.0_10aaafe5c4b9a7c533bd03f2ee45f28ef09cbe3b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.github.nicolasjafelle\paginglistview\1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="813900fb2a98c32193da6f120642e407f56af59b">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.nicolasjafelle-paginglistview-1.2_4590086fadf6508904e1e148ee15e73c3a8ef7a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\佟杨\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.4.0_b3f31dcb071b167cf161b47c377ed0491d77c8c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_2ccb323654a383c8e9a40029b0cd1fd2dd8df2b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\Curriculum\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Android\Curriculum\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_89c6f2118e62c996dec014e4ab3eeb3916857f92\classes.dex" />
     </item>
 
 </items>

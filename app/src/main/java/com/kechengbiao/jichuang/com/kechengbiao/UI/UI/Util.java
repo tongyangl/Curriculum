@@ -12,6 +12,10 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 
 import java.io.File;
@@ -136,23 +140,20 @@ public class Util extends Activity {
             Bitmap bitmap = BitmapFactory.decodeStream(fis);
             return bitmap;
         } catch (FileNotFoundException e) {
+            Log.d("vvv","getfiled");
             e.printStackTrace();
             return null;
         }
     }
 
     public static void saveBackground(Bitmap bitmap, Context context) {
-
         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/jike";
         File f=new File(path);
         if (!f.exists()){
-
             f.mkdir();
         }
-
         try {
             File file = new File(f, "background.jpg");
-
             if (file.exists()) {
                 file.delete();
             }
@@ -173,23 +174,6 @@ public class Util extends Activity {
         }
 
     }
-    public static Uri getImageContentUri(Context context, java.io.File imageFile) {
-        String filePath = imageFile.getAbsolutePath();
-        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                new String[] { MediaStore.Images.Media._ID }, MediaStore.Images.Media.DATA + "=? ",
-                new String[] { filePath }, null);
-        if (cursor != null && cursor.moveToFirst()) {
-            int id = cursor.getInt(cursor.getColumnIndex(MediaStore.MediaColumns._ID));
-            Uri baseUri = Uri.parse("content://media/external/images/media");
-            return Uri.withAppendedPath(baseUri, "" + id);
-        } else {
-            if (imageFile.exists()) {
-                ContentValues values = new ContentValues();
-                values.put(MediaStore.Images.Media.DATA, filePath);
-                return context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-            } else {
-                return null;
-            }
-        }
-    }
+
+
 }

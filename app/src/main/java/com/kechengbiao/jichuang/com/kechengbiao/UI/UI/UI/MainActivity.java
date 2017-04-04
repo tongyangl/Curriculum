@@ -43,6 +43,8 @@ import com.kechengbiao.jichuang.com.kechengbiao.R;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.LoginActivity;
 import com.kechengbiao.jichuang.com.kechengbiao.UI.UI.Util;
 
+import net.qiujuer.genius.blur.StackBlur;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,7 +66,6 @@ public class MainActivity extends baseactivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
-    private ProgressDialog progressDialog;
     private LinearLayout layout1;
     private LinearLayout layout2;
     private LinearLayout layout3;
@@ -87,6 +88,7 @@ public class MainActivity extends baseactivity {
     private LinearLayout kb;
     private TextView nokb;
     private LinearLayout bzv;
+
     //  private RelativeLayout background;
     @Override
     protected void onStart() {
@@ -95,6 +97,8 @@ public class MainActivity extends baseactivity {
         registerReceiver(receiver, intentFilter);
         IntentFilter intentFilter1 = new IntentFilter("resetkb");
         registerReceiver(receiver, intentFilter1);
+        IntentFilter intentFilter2 = new IntentFilter("setbackground");
+        registerReceiver(receiver, intentFilter2);
     }
 
     @Override
@@ -138,6 +142,9 @@ public class MainActivity extends baseactivity {
                     SharedPreferences sharedPreferences = getSharedPreferences("zc", MODE_PRIVATE);
                     title_zc.setText("第" + sharedPreferences.getString("zc", "1") + "周");
                     setkb(sharedPreferences.getString("zc", "1"));
+                }else if (intent.getAction().equals("setbackground")){
+                    Log.d("vvvv","getsend");
+                    setBackground();
                 }
             }
         };
@@ -227,7 +234,7 @@ public class MainActivity extends baseactivity {
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         resetzc = (TextView) findViewById(R.id.resetzc);
         toplinear = (LinearLayout) findViewById(R.id.hscroview);
-        bzv= (LinearLayout) findViewById(R.id.bz);
+        bzv = (LinearLayout) findViewById(R.id.bz);
         Calendar calendar = Calendar.getInstance();
         int mo = calendar.get(Calendar.MONTH) + 1;
         View view = ngv.getHeaderView(0);
@@ -257,7 +264,7 @@ public class MainActivity extends baseactivity {
         } else {
             kb.setVisibility(View.GONE);
             nokb.setVisibility(View.VISIBLE);
-           bzv.setVisibility(View.GONE);
+            bzv.setVisibility(View.GONE);
             nokb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -371,12 +378,8 @@ public class MainActivity extends baseactivity {
                 }
             }
         });
+        setBackground();
 
-        if (Util.getBackground(this) != null) {
-
-            Drawable drawable = new BitmapDrawable(Util.getBackground(this));
-            background.setBackground(drawable);
-        }
     }
 
     @Override
@@ -420,13 +423,7 @@ public class MainActivity extends baseactivity {
 
             } else if (requestCode == 3) {
 
-
-                if (Util.getBackground(this) != null) {
-                    Drawable drawable = new BitmapDrawable(Util.getBackground(this));
-                    background.setBackground(drawable);
-                    Log.d("ccc", "3333");
-
-                }
+                   setBackground();
 
             }
 
@@ -473,9 +470,13 @@ public class MainActivity extends baseactivity {
             ic_2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("seek", 1);
+                    editor.commit();
                     Resources resources = getResources();
                     Drawable drawable = resources.getDrawable(R.drawable.ic_b22);
-                    background.setBackground(drawable);
+                    background.setBackgroundResource(R.drawable.ic_b22);
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                     Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
 
@@ -484,9 +485,13 @@ public class MainActivity extends baseactivity {
             ic_3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("seek", 1);
+                    editor.commit();
                     Resources resources = getResources();
                     Drawable drawable = resources.getDrawable(R.drawable.ic_b33);
-                    background.setBackground(drawable);
+                    background.setBackgroundResource(R.drawable.ic_b33);
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                     Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
                 }
@@ -494,9 +499,13 @@ public class MainActivity extends baseactivity {
             ic_4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("seek", 1);
+                    editor.commit();
                     Resources resources = getResources();
                     Drawable drawable = resources.getDrawable(R.drawable.ic_b44);
-                    background.setBackground(drawable);
+                    background.setBackgroundResource(R.drawable.ic_b44);
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                     Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
                 }
@@ -504,19 +513,30 @@ public class MainActivity extends baseactivity {
             ic_5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("seek", 1);
+                    editor.commit();
                     Resources resources = getResources();
+
                     Drawable drawable = resources.getDrawable(R.drawable.ic_b55);
-                    background.setBackground(drawable);
+                    background.setBackgroundResource(R.drawable.ic_b55);
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                     Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
+
+
                 }
             });
             ic_1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("set", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("seek", 1);
+                    editor.commit();
                     Resources resources = getResources();
                     Drawable drawable = resources.getDrawable(R.drawable.ic_b11);
-                    background.setBackground(drawable);
+                    background.setBackgroundResource(R.drawable.ic_b11);
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                     Util.saveBackground(bitmapDrawable.getBitmap(), MainActivity.this);
 
@@ -542,7 +562,6 @@ public class MainActivity extends baseactivity {
             popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
             popupWindow.setFocusable(true);
             popupWindow.setOutsideTouchable(true);
-             popupWindow.setAnimationStyle(R.style.take_photo_anim);
             popupWindow.setContentView(view);
             popupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.activity_main, null), Gravity.BOTTOM, 0, 0);
 
@@ -600,10 +619,39 @@ public class MainActivity extends baseactivity {
         builder.show();
     }
 
+    public void setBackground() {
+
+        if (Util.getBackground(this) != null) {
+            SharedPreferences preferences = getSharedPreferences("set", MODE_PRIVATE);
+            Log.d("zzzz", preferences.getInt("seek", 0) + "");
+            int progress = preferences.getInt("seek", 0) / 4;
+            if (progress == 0) {
+                progress = 1;
+            }
+            Log.d("vvvv", "have");
+            Bitmap newBitmap = StackBlur.blurNativelyPixels(Util.getBackground(this), (int) progress, false);
+            Drawable drawable = new BitmapDrawable(newBitmap);
+            background.setBackground(drawable);
+        } else {
+            Drawable d = getResources().getDrawable(R.drawable.ic_b5);
+            BitmapDrawable bd = (BitmapDrawable) d;
+            Bitmap bitmap = bd.getBitmap();
+            Util.saveBackground(bitmap, this);
+            SharedPreferences preferences = getSharedPreferences("set", MODE_PRIVATE);
+            Log.d("zzzz", preferences.getInt("seek", 0) + "");
+            int progress = preferences.getInt("seek", 0) / 4;
+            Bitmap newBitmap = StackBlur.blurNativelyPixels(bitmap, (int) progress, false);
+            Drawable drawable = new BitmapDrawable(newBitmap);
+            background.setBackground(drawable);
+            Log.d("vvvv", "null");
+
+        }
+
+    }
 
     private void setkb(String zc) {
         RemoveView();
-        if (!kb.isShown()){
+        if (!kb.isShown()) {
             kb.setVisibility(View.VISIBLE);
             nokb.setVisibility(View.GONE);
             bzv.setVisibility(View.VISIBLE);
