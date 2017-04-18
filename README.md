@@ -4,10 +4,10 @@
 
 应用截图：
 
-![](https://ox.xizero.com/uploads/2017/03/ic_setting.jpg)
-![](https://ox.xizero.com/uploads/2017/03/ic_library.jpg)
-![](https://ox.xizero.com/uploads/2017/03/ic_book.jpg)
-![](https://ox.xizero.com/uploads/2017/03/ic_class.jpg)
-![](https://ox.xizero.com/uploads/2017/03/ic_grade.jpg)
+![](http://i4.buimg.com/567571/60f53c32c560f938.jpg)
+![](http://i4.buimg.com/567571/8900d5cb559b5802.jpg)
+![](http://i2.muimg.com/567571/c28ee82410746dc5.jpg)
+![](http://i1.piimg.com/567571/154906c3860de57c.jpg)
+![](http://i1.piimg.com/567571/c1d5d5dfdbd0c41b.jpg)
 
 
